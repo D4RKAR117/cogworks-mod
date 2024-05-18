@@ -1,0 +1,43 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = tab
+insert_final_newline = true
+max_line_length = 120
+tab_width = 4
+
+[*.nbtt]
+max_line_length = 150
+
+[{*.ant,*.fxml,*.jhm,*.jnlp,*.jrxml,*.jspx,*.pom,*.rng,*.tagx,*.tld,*.wsdl,*.xml,*.xsd,*.xsl,*.xslt,*.xul}]
+indent_style = space
+
+[{*.bash,*.sh,*.zsh}]
+indent_size = 2
+indent_style = space
+tab_width = 2
+
+[{*.gant,*.groovy,*.gy}]
+indent_style = space
+
+[{*.har,*.json,*.jsonc,*.png.mcmeta,mcmod.info,pack.mcmeta}]
+indent_size = 2
+indent_style = space
+
+[{*.htm,*.html,*.sht,*.shtm,*.shtml}]
+indent_style = space
+
+[{*.kt,*.kts}]
+indent_style = space
+
+[{*.markdown,*.md}]
+indent_style = space
+
+[{*.toml,Cargo.lock,Cargo.toml.orig,Gopkg.lock,Pipfile,poetry.lock}]
+indent_style = space
+
+[{*.yaml,*.yml}]
+indent_size = 2
