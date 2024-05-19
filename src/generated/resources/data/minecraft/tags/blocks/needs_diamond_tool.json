@@ -1,0 +1,14 @@
+{
+  "values": [
+    "cog_works:tungsten_ore",
+    "cog_works:deepslate_tungsten_ore",
+    "cog_works:titanium_ore",
+    "cog_works:deepslate_titanium_ore",
+    "cog_works:platinum_ore",
+    "cog_works:deepslate_platinum_ore",
+    "cog_works:molybdenum_ore",
+    "cog_works:deepslate_molybdenum_ore",
+    "cog_works:iridium_ore",
+    "cog_works:deepslate_iridium_ore"
+  ]
+}

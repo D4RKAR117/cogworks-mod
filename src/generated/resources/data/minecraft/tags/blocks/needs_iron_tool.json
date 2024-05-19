@@ -1,0 +1,14 @@
+{
+  "values": [
+    "cog_works:cobalt_ore",
+    "cog_works:deepslate_cobalt_ore",
+    "cog_works:nickel_ore",
+    "cog_works:deepslate_nickel_ore",
+    "cog_works:bauxite_ore",
+    "cog_works:deepslate_bauxite_ore",
+    "cog_works:lithium_ore",
+    "cog_works:deepslate_lithium_ore",
+    "cog_works:graphite_ore",
+    "cog_works:deepslate_graphite_ore"
+  ]
+}
