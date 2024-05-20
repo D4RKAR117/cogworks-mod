@@ -1,4 +1,4 @@
-package org.darkar.cog_works.datagen;
+package org.darkar.cog_works.generation.data;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -30,7 +30,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			Registry.Blocks.MOLYBDENUM_ORE.get(),
 			Registry.Blocks.LITHIUM_ORE.get(),
 			Registry.Blocks.IRIDIUM_ORE.get(),
-			Registry.Blocks.GRAPHITE_ORE.get());
+			Registry.Blocks.GRAPHITE_ORE.get())
+			.addTag(BlockTags.STONE_ORE_REPLACEABLES);
 
 		this.tag(Tags.Blocks.ORES).add(
 			Registry.Blocks.DEEPSLATE_TUNGSTEN_ORE.get(),

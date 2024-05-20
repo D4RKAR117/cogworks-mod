@@ -1,5 +1,5 @@
-// 1.20.6	2024-05-19T14:18:10.1901613	Tags for minecraft:block mod id cog_works
-f8f716c075927a4fad5f043452de47791242acec data/c/tags/blocks/ores.json
+// 1.20.6	2024-05-19T16:14:06.690821	Tags for minecraft:block mod id cog_works
+e9f33059b8de90871403e988b1ef437c322ffe42 data/c/tags/blocks/ores.json
 0c7da0f32c0ca9d4ea3ae023e44834d2c36c762d data/minecraft/tags/blocks/mineable/pickaxe.json
 0588128a1c4b038372348beb255961e587767064 data/minecraft/tags/blocks/needs_diamond_tool.json
 d2c3532920241ae341318d2d1f6bee936281c5c4 data/minecraft/tags/blocks/needs_iron_tool.json

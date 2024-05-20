@@ -1,4 +1,4 @@
-package org.darkar.cog_works.datagen;
+package org.darkar.cog_works.generation.data;
 
 
 import net.minecraft.data.PackOutput;

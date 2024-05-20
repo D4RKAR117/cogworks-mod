@@ -1,4 +1,4 @@
-package org.darkar.cog_works.datagen;
+package org.darkar.cog_works.generation.data;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
@@ -7,7 +7,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
-import org.darkar.cog_works.datagen.lang.EN_US_Generator;
+import org.darkar.cog_works.generation.data.lang.EN_US_Generator;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -27,5 +27,7 @@ public class DataGenerationManager {
 		BlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(), new BlockTagGenerator(output, lookupProvider, existingFileHelper));
 		generator.addProvider(event.includeServer(), new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
 		generator.addProvider(event.includeClient(), new EN_US_Generator(output));
+
+		generator.addProvider(event.includeServer(), new WorldDataGenerator(output, lookupProvider));
 	}
 }

@@ -1,4 +1,4 @@
-package org.darkar.cog_works.datagen.lang;
+package org.darkar.cog_works.generation.data.lang;
 
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
