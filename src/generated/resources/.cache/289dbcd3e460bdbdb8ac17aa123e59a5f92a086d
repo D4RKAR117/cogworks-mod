@@ -1,5 +1,15 @@
-// 1.20.6	2024-05-19T16:14:06.690821	Tags for minecraft:block mod id cog_works
-e9f33059b8de90871403e988b1ef437c322ffe42 data/c/tags/blocks/ores.json
+// 1.20.6	2024-05-20T18:49:15.1716355	Tags for minecraft:block mod id cog_works
+e2b2434ef0a59f46205bdcc5347444cc9a3eff9b data/c/tags/blocks/ores.json
+8e78287246125b0e18a4f086e00f37fc8298ae00 data/c/tags/blocks/ores/bauxite.json
+49280ece99a4c033b7b2592e7caaf4a5fcd52b8f data/c/tags/blocks/ores/cobalt.json
+005adf3e8dd399322ebfa268dd0456c8e3fa7e2f data/c/tags/blocks/ores/graphite.json
+3c034f3c93e22ad55a8a866c121b3842ce2faec2 data/c/tags/blocks/ores/iridium.json
+ffd6d649f2a2d1802403a3e37a1d8b13675ba556 data/c/tags/blocks/ores/lithium.json
+32103ef4930c1b109015d7935915b3e1395ca3ec data/c/tags/blocks/ores/molybdenum.json
+2a308644fd36140101992c68bb57fcb95b613e98 data/c/tags/blocks/ores/nickel.json
+d3b67ae304dff1fb62d7e632ec75032c7c782f7e data/c/tags/blocks/ores/platinum.json
+9f9d51638d1ea8f13ea7fbd36206eb7237cc5702 data/c/tags/blocks/ores/titanium.json
+df7a2272e210bac05c0b10236534f1eca9df90c4 data/c/tags/blocks/ores/tungsten.json
 0c7da0f32c0ca9d4ea3ae023e44834d2c36c762d data/minecraft/tags/blocks/mineable/pickaxe.json
 0588128a1c4b038372348beb255961e587767064 data/minecraft/tags/blocks/needs_diamond_tool.json
 d2c3532920241ae341318d2d1f6bee936281c5c4 data/minecraft/tags/blocks/needs_iron_tool.json

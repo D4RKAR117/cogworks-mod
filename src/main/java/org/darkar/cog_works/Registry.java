@@ -1,5 +1,8 @@
 package org.darkar.cog_works;
 
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -23,6 +26,28 @@ public class Registry {
 	public static class Blocks {
 
 		private static final DeferredRegister.Blocks DEFERRED_REGISTRY = DeferredRegister.createBlocks(MOD_ID);
+
+		public static class  Tags {
+
+			public static final TagKey<Block> BAUXITE_ORES = createConventional("ores/bauxite");
+			public static final TagKey<Block> GRAPHITE_ORES = createConventional("ores/graphite");
+			public static final TagKey<Block> LITHIUM_ORES = createConventional("ores/lithium");
+			public static final TagKey<Block> MOLYBDENUM_ORES = createConventional("ores/molybdenum");
+			public static final TagKey<Block> IRIDIUM_ORES = createConventional("ores/iridium");
+			public static final TagKey<Block> TUNGSTEN_ORES = createConventional("ores/tungsten");
+			public static final TagKey<Block> TITANIUM_ORES = createConventional("ores/titanium");
+			public static final TagKey<Block> COBALT_ORES = createConventional("ores/cobalt");
+			public static final TagKey<Block> NICKEL_ORES = createConventional("ores/nickel");
+			public static final TagKey<Block> PLATINUM_ORES = createConventional("ores/platinum");
+
+			private static TagKey<Block> createConventional(String name) {
+				return TagKey.create(Registries.BLOCK, new ResourceLocation("c" ,name));
+			}
+
+			private static TagKey<Block> createCustom(String name) {
+				return TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, name));
+			}
+		}
 
 		// Tungsten Ore
 		public static final DeferredBlock<Block> TUNGSTEN_ORE = DEFERRED_REGISTRY.registerSimpleBlock("tungsten_ore",
