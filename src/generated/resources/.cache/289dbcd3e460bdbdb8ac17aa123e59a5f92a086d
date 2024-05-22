@@ -1,15 +1,25 @@
-// 1.20.6	2024-05-20T18:49:15.1716355	Tags for minecraft:block mod id cog_works
-e2b2434ef0a59f46205bdcc5347444cc9a3eff9b data/c/tags/blocks/ores.json
+// 1.20.6	2024-05-21T19:25:09.0183766	Tags for minecraft:block mod id cog_works
+1a6573827671e3b60d4bd14599a5d96c8563dea4 data/c/tags/blocks/ores.json
 8e78287246125b0e18a4f086e00f37fc8298ae00 data/c/tags/blocks/ores/bauxite.json
+11945b728eda841b521980d792506977f8dbf17c data/c/tags/blocks/ores/beryllium.json
+396e65747bfbe9848f20769e5d38f6d6bf84bbb9 data/c/tags/blocks/ores/cadmium.json
+f04e22f9c2f5c29fc0cc8699adb7f0acd81dc3dd data/c/tags/blocks/ores/chromium.json
 49280ece99a4c033b7b2592e7caaf4a5fcd52b8f data/c/tags/blocks/ores/cobalt.json
 005adf3e8dd399322ebfa268dd0456c8e3fa7e2f data/c/tags/blocks/ores/graphite.json
 3c034f3c93e22ad55a8a866c121b3842ce2faec2 data/c/tags/blocks/ores/iridium.json
 ffd6d649f2a2d1802403a3e37a1d8b13675ba556 data/c/tags/blocks/ores/lithium.json
+bf66cc2d3e867ce1d51ede15360e8c198462eff4 data/c/tags/blocks/ores/manganese.json
 32103ef4930c1b109015d7935915b3e1395ca3ec data/c/tags/blocks/ores/molybdenum.json
 2a308644fd36140101992c68bb57fcb95b613e98 data/c/tags/blocks/ores/nickel.json
+09161043b33d44b42b9077c21e350b9899db271a data/c/tags/blocks/ores/osmium.json
+2a258de4ef8ad588238b3efd22b580e5477b922d data/c/tags/blocks/ores/palladium.json
 d3b67ae304dff1fb62d7e632ec75032c7c782f7e data/c/tags/blocks/ores/platinum.json
+a8510c24f9b54ea46af72a7399de3ff8760a7d1e data/c/tags/blocks/ores/thorium.json
 9f9d51638d1ea8f13ea7fbd36206eb7237cc5702 data/c/tags/blocks/ores/titanium.json
 df7a2272e210bac05c0b10236534f1eca9df90c4 data/c/tags/blocks/ores/tungsten.json
-0c7da0f32c0ca9d4ea3ae023e44834d2c36c762d data/minecraft/tags/blocks/mineable/pickaxe.json
+e969c8e005ba656c14fda7b1210e549a8dcbdcd1 data/c/tags/blocks/ores/uranium.json
+ed0917989c8fd94ba75bc921f5f99e2e5686efb9 data/c/tags/blocks/ores/vanadium.json
+47e3c5be8aa6bc35900fc081ac0cc19bfeaabe78 data/c/tags/blocks/ores/zinc.json
+95b15bada0ff3c70f5531af5624fc1290a96caaf data/minecraft/tags/blocks/mineable/pickaxe.json
 0588128a1c4b038372348beb255961e587767064 data/minecraft/tags/blocks/needs_diamond_tool.json
-d2c3532920241ae341318d2d1f6bee936281c5c4 data/minecraft/tags/blocks/needs_iron_tool.json
+2ef2283a7b8467e0556eeaeb65a99432d3618cf4 data/minecraft/tags/blocks/needs_iron_tool.json

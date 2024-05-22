@@ -39,6 +39,16 @@ public class Registry {
 			public static final TagKey<Block> COBALT_ORES = createConventional("ores/cobalt");
 			public static final TagKey<Block> NICKEL_ORES = createConventional("ores/nickel");
 			public static final TagKey<Block> PLATINUM_ORES = createConventional("ores/platinum");
+			public static final TagKey<Block> BERYLLIUM_ORES = createConventional("ores/beryllium");
+			public static final TagKey<Block> CADMIUM_ORES = createConventional("ores/cadmium");
+			public static final TagKey<Block> CHROMIUM_ORES = createConventional("ores/chromium");
+			public static final TagKey<Block> MANGANESE_ORES = createConventional("ores/manganese");
+			public static final TagKey<Block> OSMIUM_ORES = createConventional("ores/osmium");
+			public static final TagKey<Block> PALLADIUM_ORES = createConventional("ores/palladium");
+			public static final TagKey<Block> THORIUM_ORES = createConventional("ores/thorium");
+			public static final TagKey<Block> URANIUM_ORES = createConventional("ores/uranium");
+			public static final TagKey<Block> VANADIUM_ORES = createConventional("ores/vanadium");
+			public static final TagKey<Block> ZINC_ORES = createConventional("ores/zinc");
 
 			private static TagKey<Block> createConventional(String name) {
 				return TagKey.create(Registries.BLOCK, new ResourceLocation("c" ,name));
@@ -218,6 +228,156 @@ public class Registry {
 				.sound(SoundType.DEEPSLATE)
 		);
 
+		// Beryllium Ore
+		public static final DeferredBlock<Block> BERYLLIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("beryllium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_BERYLLIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_beryllium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		// Cadmium Ore
+		public static final DeferredBlock<Block> CADMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("cadmium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_CADMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_cadmium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		// Chromium Ore
+		public static final DeferredBlock<Block> CHROMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("chromium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_CHROMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_chromium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		//Manganese Ore
+		public static final DeferredBlock<Block> MANGANESE_ORE = DEFERRED_REGISTRY.registerSimpleBlock("manganese_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_MANGANESE_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_manganese_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		// Osmium Ore
+		public static final DeferredBlock<Block> OSMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("osmium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_OSMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_osmium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		// Palladium Ore
+		public static final DeferredBlock<Block> PALLADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("palladium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_PALLADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_palladium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		//Thorium Ore
+		public static final DeferredBlock<Block> THORIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("thorium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_THORIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_thorium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		//Uranium Ore
+		public static final DeferredBlock<Block> URANIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("uranium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_URANIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_uranium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		//Vanadium Ore
+		public static final DeferredBlock<Block> VANADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("vanadium_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_VANADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_vanadium_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
+		//Zinc Ore
+		public static final DeferredBlock<Block> ZINC_ORE = DEFERRED_REGISTRY.registerSimpleBlock("zinc_ore",
+			BlockBehaviour.Properties.of().
+				strength(3.0F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.STONE)
+		);
+
+		public static final DeferredBlock<Block> DEEPSLATE_ZINC_ORE = DEFERRED_REGISTRY.registerSimpleBlock("deepslate_zinc_ore",
+			BlockBehaviour.Properties.of().
+				strength(4.5F, 3.0F)
+				.lightLevel((state) -> 7)
+				.sound(SoundType.DEEPSLATE)
+		);
+
 
 		private static void init(IEventBus bus) {
 			LOGGER.info("[Cog Works] Registering blocks ...");
@@ -248,6 +408,26 @@ public class Registry {
 		public static final DeferredItem<BlockItem> DEEPSLATE_PLATINUM_ORE = registerBlockItem(Blocks.DEEPSLATE_PLATINUM_ORE);
 		public static final DeferredItem<BlockItem> GRAPHITE_ORE = registerBlockItem(Blocks.GRAPHITE_ORE);
 		public static final DeferredItem<BlockItem> DEEPSLATE_GRAPHITE_ORE = registerBlockItem(Blocks.DEEPSLATE_GRAPHITE_ORE);
+		public static final DeferredItem<BlockItem> BERYLLIUM_ORE = registerBlockItem(Blocks.BERYLLIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_BERYLLIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_BERYLLIUM_ORE);
+		public static final DeferredItem<BlockItem> CADMIUM_ORE = registerBlockItem(Blocks.CADMIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_CADMIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_CADMIUM_ORE);
+		public static final DeferredItem<BlockItem> CHROMIUM_ORE = registerBlockItem(Blocks.CHROMIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_CHROMIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_CHROMIUM_ORE);
+		public static final DeferredItem<BlockItem> MANGANESE_ORE = registerBlockItem(Blocks.MANGANESE_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_MANGANESE_ORE = registerBlockItem(Blocks.DEEPSLATE_MANGANESE_ORE);
+		public static final DeferredItem<BlockItem> OSMIUM_ORE = registerBlockItem(Blocks.OSMIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_OSMIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_OSMIUM_ORE);
+		public static final DeferredItem<BlockItem> PALLADIUM_ORE = registerBlockItem(Blocks.PALLADIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_PALLADIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_PALLADIUM_ORE);
+		public static final DeferredItem<BlockItem> THORIUM_ORE = registerBlockItem(Blocks.THORIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_THORIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_THORIUM_ORE);
+		public static final DeferredItem<BlockItem> URANIUM_ORE = registerBlockItem(Blocks.URANIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_URANIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_URANIUM_ORE);
+		public static final DeferredItem<BlockItem> VANADIUM_ORE = registerBlockItem(Blocks.VANADIUM_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_VANADIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_VANADIUM_ORE);
+		public static final DeferredItem<BlockItem> ZINC_ORE = registerBlockItem(Blocks.ZINC_ORE);
+		public static final DeferredItem<BlockItem> DEEPSLATE_ZINC_ORE = registerBlockItem(Blocks.DEEPSLATE_ZINC_ORE);
 
 		public static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<?> block,  Item.Properties properties) {
 				return DEFERRED_REGISTRY.registerSimpleBlockItem(block, properties);

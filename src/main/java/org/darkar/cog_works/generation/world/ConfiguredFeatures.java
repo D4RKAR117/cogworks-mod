@@ -29,6 +29,17 @@ public class ConfiguredFeatures {
 	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_LITHIUM_ORE_KEY = registerKey("lithium_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_IRIDIUM_ORE_KEY = registerKey("iridium_ore");
 	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_GRAPHITE_ORE_KEY = registerKey("graphite_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_BERYLLIUM_ORE_KEY = registerKey("beryllium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_CADMIUM_ORE_KEY = registerKey("cadmium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_CHROMIUM_ORE_KEY = registerKey("chromium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_MANGANESE_ORE_KEY = registerKey("manganese_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_OSMIUM_ORE_KEY = registerKey("osmium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_PALLADIUM_ORE_KEY = registerKey("palladium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_THORIUM_ORE_KEY = registerKey("thorium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_URANIUM_ORE_KEY = registerKey("uranium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_VANADIUM_ORE_KEY = registerKey("vanadium_ore");
+	public static final ResourceKey<ConfiguredFeature<?,?>> OVERWORLD_ZINC_ORE_KEY = registerKey("zinc_ore");
+
 
 
 	public static void bootstrap(BootstrapContext<ConfiguredFeature<?,?>> context) {
@@ -85,16 +96,77 @@ public class ConfiguredFeatures {
 			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_GRAPHITE_ORE.get().defaultBlockState())
 		);
 
-		register(context, OVERWORLD_TUNGSTEN_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTungstenOres, 1));
-		register(context, OVERWORLD_TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTitaniumOres, 8));
-		register(context, OVERWORLD_COBALT_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 2));
-		register(context, OVERWORLD_NICKEL_ORE_KEY, Feature.ORE, new OreConfiguration(overworldNickelOres, 3));
+		List<OreConfiguration.TargetBlockState> overworldBerylliumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.BERYLLIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_BERYLLIUM_ORE.get().defaultBlockState())
+		                                                                       );
+
+		List<OreConfiguration.TargetBlockState> overworldCadmiumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.CADMIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_CADMIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldChromiumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.CHROMIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_CHROMIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldManganeseOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.MANGANESE_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_MANGANESE_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldOsmiumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.OSMIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_OSMIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldPalladiumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.PALLADIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_PALLADIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldThoriumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.THORIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_THORIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldUraniumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.URANIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_URANIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldVanadiumOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.VANADIUM_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_VANADIUM_ORE.get().defaultBlockState())
+		);
+
+		List<OreConfiguration.TargetBlockState> overworldZincOres = List.of(
+			OreConfiguration.target(stoneReplaceTest,Registry.Blocks.ZINC_ORE.get().defaultBlockState()),
+			OreConfiguration.target(deepslateReplaceTest,Registry.Blocks.DEEPSLATE_ZINC_ORE.get().defaultBlockState())
+		);
+
+
+		register(context, OVERWORLD_TUNGSTEN_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTungstenOres, 4));
+		register(context, OVERWORLD_TITANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldTitaniumOres, 6));
+		register(context, OVERWORLD_COBALT_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCobaltOres, 5));
+		register(context, OVERWORLD_NICKEL_ORE_KEY, Feature.ORE, new OreConfiguration(overworldNickelOres, 6));
 		register(context, OVERWORLD_PLATINUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldPlatinumOres, 1));
-		register(context, OVERWORLD_BAUXITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldBauxiteOres, 12));
+		register(context, OVERWORLD_BAUXITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldBauxiteOres, 7));
 		register(context, OVERWORLD_MOLYBDENUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldMolybdenumOres, 1));
 		register(context, OVERWORLD_LITHIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldLithiumOres, 2));
 		register(context, OVERWORLD_IRIDIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldIridiumOres, 1));
 		register(context, OVERWORLD_GRAPHITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldGraphiteOres, 4));
+		register(context, OVERWORLD_BERYLLIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldBerylliumOres, 2));
+		register(context, OVERWORLD_CADMIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldCadmiumOres, 2));
+		register(context, OVERWORLD_CHROMIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldChromiumOres, 2));
+		register(context, OVERWORLD_MANGANESE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldManganeseOres, 7));
+		register(context, OVERWORLD_OSMIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldOsmiumOres, 2));
+		register(context, OVERWORLD_PALLADIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldPalladiumOres, 3));
+		register(context, OVERWORLD_THORIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldThoriumOres, 2));
+		register(context, OVERWORLD_URANIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldUraniumOres, 4));
+		register(context, OVERWORLD_VANADIUM_ORE_KEY, Feature.ORE, new OreConfiguration(overworldVanadiumOres, 2));
+		register(context, OVERWORLD_ZINC_ORE_KEY, Feature.ORE, new OreConfiguration(overworldZincOres, 6));
 	}
 
 

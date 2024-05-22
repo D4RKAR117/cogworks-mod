@@ -44,7 +44,27 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			Registry.Blocks.DEEPSLATE_MOLYBDENUM_ORE.get(),
 			Registry.Blocks.DEEPSLATE_LITHIUM_ORE.get(),
 			Registry.Blocks.DEEPSLATE_IRIDIUM_ORE.get(),
-			Registry.Blocks.DEEPSLATE_GRAPHITE_ORE.get()
+			Registry.Blocks.DEEPSLATE_GRAPHITE_ORE.get(),
+			Registry.Blocks.BERYLLIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_BERYLLIUM_ORE.get(),
+			Registry.Blocks.CADMIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_CADMIUM_ORE.get(),
+			Registry.Blocks.CHROMIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_CHROMIUM_ORE.get(),
+			Registry.Blocks.MANGANESE_ORE.get(),
+			Registry.Blocks.DEEPSLATE_MANGANESE_ORE.get(),
+			Registry.Blocks.OSMIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_OSMIUM_ORE.get(),
+			Registry.Blocks.PALLADIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_PALLADIUM_ORE.get(),
+			Registry.Blocks.THORIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_THORIUM_ORE.get(),
+			Registry.Blocks.URANIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_URANIUM_ORE.get(),
+			Registry.Blocks.VANADIUM_ORE.get(),
+			Registry.Blocks.DEEPSLATE_VANADIUM_ORE.get(),
+			Registry.Blocks.ZINC_ORE.get(),
+			Registry.Blocks.DEEPSLATE_ZINC_ORE.get()
 		                                              );
 
 		 tag(BlockTags.NEEDS_IRON_TOOL).add(
@@ -57,7 +77,27 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			 Registry.Blocks.LITHIUM_ORE.get(),
 			 Registry.Blocks.DEEPSLATE_LITHIUM_ORE.get(),
 			 Registry.Blocks.GRAPHITE_ORE.get(),
-			 Registry.Blocks.DEEPSLATE_GRAPHITE_ORE.get()
+			 Registry.Blocks.DEEPSLATE_GRAPHITE_ORE.get(),
+			 Registry.Blocks.BERYLLIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_BERYLLIUM_ORE.get(),
+			 Registry.Blocks.CADMIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_CADMIUM_ORE.get(),
+			 Registry.Blocks.CHROMIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_CHROMIUM_ORE.get(),
+			 Registry.Blocks.MANGANESE_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_MANGANESE_ORE.get(),
+			 Registry.Blocks.OSMIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_OSMIUM_ORE.get(),
+			 Registry.Blocks.PALLADIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_PALLADIUM_ORE.get(),
+			 Registry.Blocks.THORIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_THORIUM_ORE.get(),
+             Registry.Blocks.URANIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_URANIUM_ORE.get(),
+			 Registry.Blocks.VANADIUM_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_VANADIUM_ORE.get(),
+			 Registry.Blocks.ZINC_ORE.get(),
+			 Registry.Blocks.DEEPSLATE_ZINC_ORE.get()
 		                                         );
 
 		 tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
@@ -83,6 +123,16 @@ public class BlockTagGenerator extends BlockTagsProvider {
 		 tag(COBALT_ORES).add(Registry.Blocks.COBALT_ORE.get(), Registry.Blocks.DEEPSLATE_COBALT_ORE.get());
 		 tag(NICKEL_ORES).add(Registry.Blocks.NICKEL_ORE.get(), Registry.Blocks.DEEPSLATE_NICKEL_ORE.get());
 		 tag(PLATINUM_ORES).add(Registry.Blocks.PLATINUM_ORE.get(), Registry.Blocks.DEEPSLATE_PLATINUM_ORE.get());
+		 tag(BERYLLIUM_ORES).add(Registry.Blocks.BERYLLIUM_ORE.get(), Registry.Blocks.DEEPSLATE_BERYLLIUM_ORE.get());
+		 tag(CADMIUM_ORES).add(Registry.Blocks.CADMIUM_ORE.get(), Registry.Blocks.DEEPSLATE_CADMIUM_ORE.get());
+		 tag(CHROMIUM_ORES).add(Registry.Blocks.CHROMIUM_ORE.get(), Registry.Blocks.DEEPSLATE_CHROMIUM_ORE.get());
+		 tag(MANGANESE_ORES).add(Registry.Blocks.MANGANESE_ORE.get(), Registry.Blocks.DEEPSLATE_MANGANESE_ORE.get());
+		 tag(OSMIUM_ORES).add(Registry.Blocks.OSMIUM_ORE.get(), Registry.Blocks.DEEPSLATE_OSMIUM_ORE.get());
+		 tag(PALLADIUM_ORES).add(Registry.Blocks.PALLADIUM_ORE.get(), Registry.Blocks.DEEPSLATE_PALLADIUM_ORE.get());
+		 tag(THORIUM_ORES).add(Registry.Blocks.THORIUM_ORE.get(), Registry.Blocks.DEEPSLATE_THORIUM_ORE.get());
+		 tag(URANIUM_ORES).add(Registry.Blocks.URANIUM_ORE.get(), Registry.Blocks.DEEPSLATE_URANIUM_ORE.get());
+		 tag(VANADIUM_ORES).add(Registry.Blocks.VANADIUM_ORE.get(), Registry.Blocks.DEEPSLATE_VANADIUM_ORE.get());
+		 tag(ZINC_ORES).add(Registry.Blocks.ZINC_ORE.get(), Registry.Blocks.DEEPSLATE_ZINC_ORE.get());
 
 		 tag(Tags.Blocks.ORES).addTags(
 			 BAUXITE_ORES,
@@ -94,7 +144,17 @@ public class BlockTagGenerator extends BlockTagsProvider {
 			 TITANIUM_ORES,
 			 COBALT_ORES,
 			 NICKEL_ORES,
-			 PLATINUM_ORES
+			 PLATINUM_ORES,
+			 BERYLLIUM_ORES,
+			 CADMIUM_ORES,
+			 CHROMIUM_ORES,
+			 MANGANESE_ORES,
+			 OSMIUM_ORES,
+			 PALLADIUM_ORES,
+			 THORIUM_ORES,
+			 URANIUM_ORES,
+			 VANADIUM_ORES,
+			 ZINC_ORES
 		                               );
 	}
 }

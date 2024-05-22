@@ -38,6 +38,26 @@ public class BlockStateGenerator extends BlockStateProvider {
 		blockWithItem(Registry.Blocks.DEEPSLATE_IRIDIUM_ORE);
 		blockWithItem(Registry.Blocks.GRAPHITE_ORE);
 		blockWithItem(Registry.Blocks.DEEPSLATE_GRAPHITE_ORE);
+		blockWithItem(Registry.Blocks.BERYLLIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_BERYLLIUM_ORE);
+		blockWithItem(Registry.Blocks.CADMIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_CADMIUM_ORE);
+		blockWithItem(Registry.Blocks.CHROMIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_CHROMIUM_ORE);
+		blockWithItem(Registry.Blocks.MANGANESE_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_MANGANESE_ORE);
+		blockWithItem(Registry.Blocks.OSMIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_OSMIUM_ORE);
+		blockWithItem(Registry.Blocks.PALLADIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_PALLADIUM_ORE);
+		blockWithItem(Registry.Blocks.THORIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_THORIUM_ORE);
+		blockWithItem(Registry.Blocks.URANIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_URANIUM_ORE);
+		blockWithItem(Registry.Blocks.VANADIUM_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_VANADIUM_ORE);
+		blockWithItem(Registry.Blocks.ZINC_ORE);
+		blockWithItem(Registry.Blocks.DEEPSLATE_ZINC_ORE);
 	}
 
 	private void blockWithItem(DeferredBlock<?> block) {

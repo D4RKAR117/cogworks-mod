@@ -2,8 +2,8 @@
   "feature": "cog_works:cobalt_ore",
   "placement": [
     {
-      "type": "minecraft:rarity_filter",
-      "chance": 4
+      "type": "minecraft:count",
+      "count": 3
     },
     {
       "type": "minecraft:in_square"
@@ -11,12 +11,12 @@
     {
       "type": "minecraft:height_range",
       "height": {
-        "type": "minecraft:trapezoid",
+        "type": "minecraft:uniform",
         "max_inclusive": {
-          "absolute": 32
+          "absolute": 45
         },
         "min_inclusive": {
-          "absolute": -64
+          "absolute": -20
         }
       }
     },

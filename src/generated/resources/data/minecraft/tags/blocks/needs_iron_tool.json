@@ -9,6 +9,26 @@
     "cog_works:lithium_ore",
     "cog_works:deepslate_lithium_ore",
     "cog_works:graphite_ore",
-    "cog_works:deepslate_graphite_ore"
+    "cog_works:deepslate_graphite_ore",
+    "cog_works:beryllium_ore",
+    "cog_works:deepslate_beryllium_ore",
+    "cog_works:cadmium_ore",
+    "cog_works:deepslate_cadmium_ore",
+    "cog_works:chromium_ore",
+    "cog_works:deepslate_chromium_ore",
+    "cog_works:manganese_ore",
+    "cog_works:deepslate_manganese_ore",
+    "cog_works:osmium_ore",
+    "cog_works:deepslate_osmium_ore",
+    "cog_works:palladium_ore",
+    "cog_works:deepslate_palladium_ore",
+    "cog_works:thorium_ore",
+    "cog_works:deepslate_thorium_ore",
+    "cog_works:uranium_ore",
+    "cog_works:deepslate_uranium_ore",
+    "cog_works:vanadium_ore",
+    "cog_works:deepslate_vanadium_ore",
+    "cog_works:zinc_ore",
+    "cog_works:deepslate_zinc_ore"
   ]
 }

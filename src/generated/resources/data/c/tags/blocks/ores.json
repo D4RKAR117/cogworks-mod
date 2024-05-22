@@ -9,6 +9,16 @@
     "#c:ores/titanium",
     "#c:ores/cobalt",
     "#c:ores/nickel",
-    "#c:ores/platinum"
+    "#c:ores/platinum",
+    "#c:ores/beryllium",
+    "#c:ores/cadmium",
+    "#c:ores/chromium",
+    "#c:ores/manganese",
+    "#c:ores/osmium",
+    "#c:ores/palladium",
+    "#c:ores/thorium",
+    "#c:ores/uranium",
+    "#c:ores/vanadium",
+    "#c:ores/zinc"
   ]
 }
