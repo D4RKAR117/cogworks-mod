@@ -53,5 +53,7 @@ public class EN_US_Generator extends LanguageProvider {
 	   addBlock(Registry.Blocks.DEEPSLATE_VANADIUM_ORE, "Deepslate Vanadium Ore");
 	   addBlock(Registry.Blocks.ZINC_ORE, "Zinc Ore");
 	   addBlock(Registry.Blocks.DEEPSLATE_ZINC_ORE, "Deepslate Zinc Ore");
+
+	   addItem(Registry.Items.PROSPECTING_PICK, "Prospecting Pick");
 	}
 }

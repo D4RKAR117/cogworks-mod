@@ -38,5 +38,6 @@
   "block.cog_works.tungsten_ore": "Tungsten Ore",
   "block.cog_works.uranium_ore": "Uranium Ore",
   "block.cog_works.vanadium_ore": "Vanadium Ore",
-  "block.cog_works.zinc_ore": "Zinc Ore"
+  "block.cog_works.zinc_ore": "Zinc Ore",
+  "item.cog_works.prospecting_pick": "Prospecting Pick"
 }
