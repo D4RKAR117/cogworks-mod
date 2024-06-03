@@ -1,5 +1,6 @@
 package org.darkar.cog_works;
 
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
@@ -10,9 +11,11 @@ import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.darkar.cog_works.item.ProspectingPickItem;
+import org.darkar.cog_works.item.component.ToolBehaviour;
 
 import static org.darkar.cog_works.CogWorks.LOGGER;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
@@ -22,6 +25,7 @@ public class Registry {
 		LOGGER.info("[Cog Works] Initializing registries ...");
 		Blocks.init(bus);
 		Items.init(bus);
+		Items.DataComponents.init(bus);
 	}
 
 	public static class Blocks {
@@ -165,8 +169,10 @@ public class Registry {
 	}
 
 	public static class Items {
+		//region Deferred Items
 		private static final DeferredRegister.Items DEFERRED_REGISTRY = DeferredRegister.createItems(MOD_ID);
 
+		//region BlockItems for ores
 		public static final DeferredItem<BlockItem> TUNGSTEN_ORE = registerBlockItem(Blocks.TUNGSTEN_ORE);
 		public static final DeferredItem<BlockItem> DEEPSLATE_TUNGSTEN_ORE = registerBlockItem(Blocks.DEEPSLATE_TUNGSTEN_ORE);
 		public static final DeferredItem<BlockItem> TITANIUM_ORE = registerBlockItem(Blocks.TITANIUM_ORE);
@@ -207,8 +213,31 @@ public class Registry {
 		public static final DeferredItem<BlockItem> DEEPSLATE_VANADIUM_ORE = registerBlockItem(Blocks.DEEPSLATE_VANADIUM_ORE);
 		public static final DeferredItem<BlockItem> ZINC_ORE = registerBlockItem(Blocks.ZINC_ORE);
 		public static final DeferredItem<BlockItem> DEEPSLATE_ZINC_ORE = registerBlockItem(Blocks.DEEPSLATE_ZINC_ORE);
+		//endregion
 
+		//region Tools
 		public static final DeferredItem<Item> PROSPECTING_PICK = DEFERRED_REGISTRY.register("prospecting_pick", ProspectingPickItem::new);
+		//endregion
+
+		//endregion
+
+		public static class DataComponents {
+			 private static final DeferredRegister<DataComponentType<?>> DEFERRED_REGISTRY =
+				 DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, MOD_ID);
+
+			 public static final DeferredHolder<DataComponentType<?>, DataComponentType<ToolBehaviour>> TOOL_BEHAVIOUR = DEFERRED_REGISTRY.register(
+				 "tool_behaviour",
+				 () -> DataComponentType.<ToolBehaviour>builder()
+					 .persistent(ToolBehaviour.CODEC)
+					 .networkSynchronized(ToolBehaviour.STREAM_CODEC)
+					 .build()
+
+			                                                                                                                                       );
+		     private static void init(IEventBus bus) {
+		         LOGGER.info("[Cog Works] Registering item data components ...");
+		         DEFERRED_REGISTRY.register(bus);
+		     }
+		}
 
 		public static DeferredItem<BlockItem> registerBlockItem(DeferredBlock<?> block, Item.Properties properties) {
 			return DEFERRED_REGISTRY.registerSimpleBlockItem(block, properties);
