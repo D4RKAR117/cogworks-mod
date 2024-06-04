@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.darkar.cog_works.item.ProspectingPickItem;
-import org.darkar.cog_works.item.component.ToolBehaviour;
+import org.darkar.cog_works.item.component.IsDiggingSample;
 
 import static org.darkar.cog_works.CogWorks.LOGGER;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
@@ -225,14 +225,13 @@ public class Registry {
 			 private static final DeferredRegister<DataComponentType<?>> DEFERRED_REGISTRY =
 				 DeferredRegister.create(Registries.DATA_COMPONENT_TYPE, MOD_ID);
 
-			 public static final DeferredHolder<DataComponentType<?>, DataComponentType<ToolBehaviour>> TOOL_BEHAVIOUR = DEFERRED_REGISTRY.register(
-				 "tool_behaviour",
-				 () -> DataComponentType.<ToolBehaviour>builder()
-					 .persistent(ToolBehaviour.CODEC)
-					 .networkSynchronized(ToolBehaviour.STREAM_CODEC)
-					 .build()
+			 public static final  DeferredHolder<DataComponentType<?>, DataComponentType<IsDiggingSample>> IS_DIGGING_SAMPLE =
+				DEFERRED_REGISTRY.register("is_digging_sample", () -> DataComponentType.<IsDiggingSample>builder()
+						.persistent(IsDiggingSample.CODEC)
+						.networkSynchronized(IsDiggingSample.STREAM_CODEC)
+						.build()
+				                          );
 
-			                                                                                                                                       );
 		     private static void init(IEventBus bus) {
 		         LOGGER.info("[Cog Works] Registering item data components ...");
 		         DEFERRED_REGISTRY.register(bus);

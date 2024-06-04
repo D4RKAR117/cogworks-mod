@@ -24,18 +24,20 @@ public class ItemEvents {
 		Player player = event.getEntity();
 		BlockPos pos = event.getPos();
 		LogicalSide side = event.getSide();
+		PlayerInteractEvent.LeftClickBlock.Action action = event.getAction();
 
 
 		if (itemStack.isEmpty()) return;
 		if (item instanceof ProspectingPickItem) {
-			if (!side.isClient()) {
-				if(!player.isCreative()) {
-					((ProspectingPickItem) item).handleLeftClickBlock(player, level, pos);
+			if (side.isServer()) {
+				if(!player.isCreative() && action == PlayerInteractEvent.LeftClickBlock.Action.START) {
+					if(!event.isCanceled()) ((ProspectingPickItem) item).handleLeftClickBlock(player, level, pos);
+					event.setCanceled(true);
 				}
 				return;
 			}
 
-			event.setCanceled(true);
+			if(side.isClient()) event.setCanceled(true);
 		}
 	}
 
