@@ -10,12 +10,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.attachment.AttachmentType;
+import net.neoforged.neoforge.registries.*;
 import org.darkar.cog_works.item.ProspectingPickItem;
 import org.darkar.cog_works.item.component.IsDiggingSample;
+import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
 
 import static org.darkar.cog_works.CogWorks.LOGGER;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
@@ -26,6 +25,7 @@ public class Registry {
 		Blocks.init(bus);
 		Items.init(bus);
 		Items.DataComponents.init(bus);
+		DataAttachments.init(bus);
 	}
 
 	public static class Blocks {
@@ -248,6 +248,22 @@ public class Registry {
 
 		private static void init(IEventBus bus) {
 			LOGGER.info("[Cog Works] Registering items ...");
+			DEFERRED_REGISTRY.register(bus);
+		}
+	}
+
+	public static class DataAttachments {
+		private static final DeferredRegister<AttachmentType<?>> DEFERRED_REGISTRY =
+			DeferredRegister.create(NeoForgeRegistries.ATTACHMENT_TYPES, MOD_ID);
+
+	    public static final DeferredHolder<AttachmentType<?>, AttachmentType<ChunkSampleSiteMap>> CHUNK_SAMPLE_SITE_MAP =
+		    DEFERRED_REGISTRY.register("chunk_sample_site_map",
+		                               () -> AttachmentType.builder(() -> ChunkSampleSiteMap.DEFAULT)
+		                                                   .serialize(ChunkSampleSiteMap.CODEC).build());
+
+
+		private static void init(IEventBus bus) {
+			LOGGER.info("[Cog Works] Registering data attachments ...");
 			DEFERRED_REGISTRY.register(bus);
 		}
 	}
