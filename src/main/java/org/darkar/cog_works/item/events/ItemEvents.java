@@ -1,6 +1,7 @@
 package org.darkar.cog_works.item.events;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +24,7 @@ public class ItemEvents {
 		Level level = event.getLevel();
 		Player player = event.getEntity();
 		BlockPos pos = event.getPos();
+		Direction face = event.getFace();
 		LogicalSide side = event.getSide();
 		PlayerInteractEvent.LeftClickBlock.Action action = event.getAction();
 
@@ -31,7 +33,7 @@ public class ItemEvents {
 		if (item instanceof ProspectingPickItem) {
 			if (side.isServer()) {
 				if(!player.isCreative() && action == PlayerInteractEvent.LeftClickBlock.Action.START) {
-					if(!event.isCanceled()) ((ProspectingPickItem) item).handleLeftClickBlock(player, level, pos);
+					if(!event.isCanceled()) ((ProspectingPickItem) item).handleLeftClickBlock(player, level, pos, face);
 					event.setCanceled(true);
 				}
 				return;

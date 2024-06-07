@@ -2,8 +2,10 @@ package org.darkar.cog_works.item;
 
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
@@ -17,9 +19,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.neoforged.neoforge.common.extensions.IItemExtension;
+import net.neoforged.neoforge.network.PacketDistributor;
 import org.darkar.cog_works.item.component.IsDiggingSample;
 import org.darkar.cog_works.item.renderer.ProspectingPickItemRenderer;
 import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
+import org.darkar.cog_works.net.payload.client.ClientSampleSiteMapUpdatePayload;
 import org.darkar.cog_works.utils.enums.SampleSiteRegion;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
@@ -103,7 +107,7 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 		return false;
 	}
 	
-	public void handleLeftClickBlock(Player player, Level level, BlockPos pos) {
+	public void handleLeftClickBlock(Player player, Level level, BlockPos pos, Direction face) {
 		if (level instanceof ServerLevel serverLevel) {
 			
 			BlockState blockState = serverLevel.getBlockState(pos);
@@ -155,8 +159,13 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						
 						chunkSampleSiteMap = new ChunkSampleSiteMap(pos, chunkSampleSiteMap.deepPos(),
 						                                            surfaceSiteState,
-						                                            chunkSampleSiteMap.deepState());
+						                                            chunkSampleSiteMap.deepState(),
+						                                            face, chunkSampleSiteMap.deepFace());
 						chunk.setData(CHUNK_SAMPLE_SITE_MAP, chunkSampleSiteMap);
+						PacketDistributor.sendToPlayer((ServerPlayer) player, new ClientSampleSiteMapUpdatePayload(
+							chunkSampleSiteMap.surfacePos(), chunkSampleSiteMap.deepPos(),
+							chunkSampleSiteMap.surfaceState(), chunkSampleSiteMap.deepState(),
+							chunkSampleSiteMap.surfaceFace(), chunkSampleSiteMap.deepFace()));
 					}
 					
 					case DEEP -> {
@@ -180,8 +189,13 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						triggerAnim(player, GeoItem.getOrAssignId(itemStack, serverLevel), "dig_sample_controller",
 						            "dig_sample");
 						chunkSampleSiteMap = new ChunkSampleSiteMap(chunkSampleSiteMap.surfacePos(), pos,
-						                                            chunkSampleSiteMap.surfaceState(), deepSiteState);
+						                                            chunkSampleSiteMap.surfaceState(), deepSiteState,
+						                                            chunkSampleSiteMap.surfaceFace(), face);
 						chunk.setData(CHUNK_SAMPLE_SITE_MAP, chunkSampleSiteMap);
+						PacketDistributor.sendToPlayer((ServerPlayer) player, new ClientSampleSiteMapUpdatePayload(
+							chunkSampleSiteMap.surfacePos(), chunkSampleSiteMap.deepPos(),
+							chunkSampleSiteMap.surfaceState(), chunkSampleSiteMap.deepState(),
+							chunkSampleSiteMap.surfaceFace(), chunkSampleSiteMap.deepFace()));
 						
 					}
 				}
