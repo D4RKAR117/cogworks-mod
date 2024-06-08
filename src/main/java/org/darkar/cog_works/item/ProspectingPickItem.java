@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
@@ -144,10 +143,9 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
 						if (needsCollection) {
 							String message = String.format(
-								"This chunk already has a surface sampling site. Please collect the surface sample at" +
-								" %s" +
-								" before placing a new one",
-								chunkSampleSiteMap.surfacePos());
+								"This chunk already has a surface sampling site. Please collect the surface sample " +
+								"at" +
+								" %s" + " before placing a new one", chunkSampleSiteMap.surfacePos());
 							player.sendSystemMessage(Component.literal(message));
 							return;
 						}
@@ -159,28 +157,26 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						
 						chunkSampleSiteMap = new ChunkSampleSiteMap(pos, chunkSampleSiteMap.deepPos(),
 						                                            surfaceSiteState,
-						                                            chunkSampleSiteMap.deepState(),
-						                                            face, chunkSampleSiteMap.deepFace());
+						                                            chunkSampleSiteMap.deepState(), face,
+						                                            chunkSampleSiteMap.deepFace());
 						chunk.setData(CHUNK_SAMPLE_SITE_MAP, chunkSampleSiteMap);
-						PacketDistributor.sendToPlayer((ServerPlayer) player, new ClientSampleSiteMapUpdatePayload(
-							chunkSampleSiteMap.surfacePos(), chunkSampleSiteMap.deepPos(),
-							chunkSampleSiteMap.surfaceState(), chunkSampleSiteMap.deepState(),
-							chunkSampleSiteMap.surfaceFace(), chunkSampleSiteMap.deepFace()));
+						ClientSampleSiteMapUpdatePayload payload = new ClientSampleSiteMapUpdatePayload(chunk.getPos(),
+						                                                                                chunkSampleSiteMap);
+						PacketDistributor.sendToPlayersTrackingChunk(serverLevel, chunk.getPos(), payload);
 					}
 					
 					case DEEP -> {
 						boolean needsCollection = !chunkSampleSiteMap.deepPos().equals(BlockPos.ZERO) &&
-						                          (!chunkSampleSiteMap.deepState().isAir() &&
-						                           serverLevel.getBlockState(chunkSampleSiteMap.deepPos()).is(
-							                           tagsPerRegion.get(SampleSiteRegion.DEEP)));
+						                          (!chunkSampleSiteMap.deepState().isAir() && serverLevel.getBlockState(
+							                          chunkSampleSiteMap.deepPos()).is(
+							                          tagsPerRegion.get(SampleSiteRegion.DEEP)));
 						
 						itemStack.set(IS_DIGGING_SAMPLE, isDiggingSample);
 						player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
 						if (needsCollection) {
 							String message = String.format(
 								"This chunk already has a deep sampling site. Please collect the deep sample at %s " +
-								"before placing a new one",
-								chunkSampleSiteMap.deepPos());
+								"before placing a new one", chunkSampleSiteMap.deepPos());
 							player.sendSystemMessage(Component.literal(message));
 							return;
 						}
@@ -192,11 +188,9 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						                                            chunkSampleSiteMap.surfaceState(), deepSiteState,
 						                                            chunkSampleSiteMap.surfaceFace(), face);
 						chunk.setData(CHUNK_SAMPLE_SITE_MAP, chunkSampleSiteMap);
-						PacketDistributor.sendToPlayer((ServerPlayer) player, new ClientSampleSiteMapUpdatePayload(
-							chunkSampleSiteMap.surfacePos(), chunkSampleSiteMap.deepPos(),
-							chunkSampleSiteMap.surfaceState(), chunkSampleSiteMap.deepState(),
-							chunkSampleSiteMap.surfaceFace(), chunkSampleSiteMap.deepFace()));
-						
+						ClientSampleSiteMapUpdatePayload payload = new ClientSampleSiteMapUpdatePayload(chunk.getPos(),
+						                                                                              chunkSampleSiteMap);
+						PacketDistributor.sendToPlayersTrackingChunk(serverLevel, chunk.getPos(), payload);
 					}
 				}
 				

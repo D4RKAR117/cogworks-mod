@@ -23,10 +23,7 @@ public class LevelEvents {
 		ChunkPos pos = chunk.getPos();
 		if (chunk.hasAttachments() && chunk.hasData(CHUNK_SAMPLE_SITE_MAP)) {
 			ChunkSampleSiteMap chunkSampleSiteMap = chunk.getData(CHUNK_SAMPLE_SITE_MAP);
-			ClientSampleSiteMapUpdatePayload payload = new ClientSampleSiteMapUpdatePayload(
-				chunkSampleSiteMap.surfacePos(), chunkSampleSiteMap.deepPos(), chunkSampleSiteMap.surfaceState(),
-				chunkSampleSiteMap.deepState(), chunkSampleSiteMap.surfaceFace(), chunkSampleSiteMap.deepFace()
-			);
+			ClientSampleSiteMapUpdatePayload payload = new ClientSampleSiteMapUpdatePayload(pos, chunkSampleSiteMap);
 			PacketDistributor.sendToPlayersTrackingChunk(serverLevel, pos, payload);
 		}
 	}
