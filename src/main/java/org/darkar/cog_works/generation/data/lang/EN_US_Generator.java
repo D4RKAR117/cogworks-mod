@@ -13,6 +13,8 @@ public class EN_US_Generator extends LanguageProvider {
 
 	@Override
 	protected void addTranslations() {
+		
+		// region Blocks
 	   addBlock(Registry.Blocks.TUNGSTEN_ORE, "Tungsten Ore");
 	   addBlock(Registry.Blocks.DEEPSLATE_TUNGSTEN_ORE, "Deepslate Tungsten Ore");
 	   addBlock(Registry.Blocks.TITANIUM_ORE, "Titanium Ore");
@@ -53,7 +55,17 @@ public class EN_US_Generator extends LanguageProvider {
 	   addBlock(Registry.Blocks.DEEPSLATE_VANADIUM_ORE, "Deepslate Vanadium Ore");
 	   addBlock(Registry.Blocks.ZINC_ORE, "Zinc Ore");
 	   addBlock(Registry.Blocks.DEEPSLATE_ZINC_ORE, "Deepslate Zinc Ore");
+	   //endregion
 
+		//region Items
 	   addItem(Registry.Items.PROSPECTING_PICK, "Prospecting Pick");
+	   addItem(Registry.Items.EMPTY_SAMPLE_TUBE, "Empty Sample Tube");
+	   addItem(Registry.Items.FILLED_SAMPLE_TUBE, "Filled Sample Tube");
+	   //endregion
+		
+		//region Tooltips
+		add(String.format("tooltip.%s.sample_location.chunk_pos", MOD_ID), "Chunk Sample: [x: %s, z: %s]");
+		add(String.format("tooltip.%s.sample_location.region", MOD_ID), "Sample Region: %s");
+		//endregion
 	}
 }

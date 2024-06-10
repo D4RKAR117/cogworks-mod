@@ -8,14 +8,16 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkAccess;
 import net.minecraft.world.level.chunk.LevelChunk;
 import net.neoforged.neoforge.common.extensions.IItemExtension;
 import net.neoforged.neoforge.network.PacketDistributor;
@@ -23,6 +25,7 @@ import org.darkar.cog_works.item.component.IsDiggingSample;
 import org.darkar.cog_works.item.renderer.ProspectingPickItemRenderer;
 import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
 import org.darkar.cog_works.net.payload.client.ClientSampleSiteMapUpdatePayload;
+import org.darkar.cog_works.utils.Data.AttachmentUtils.ChunkSampleSiteMapUtil;
 import org.darkar.cog_works.utils.enums.SampleSiteRegion;
 import software.bernie.geckolib.animatable.GeoItem;
 import software.bernie.geckolib.animatable.SingletonGeoAnimatable;
@@ -93,12 +96,67 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 	}
 	
 	@Override
-	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-		if (level instanceof ServerLevel serverLevel) triggerAnim(player,
-		                                                          GeoItem.getOrAssignId(player.getItemInHand(hand),
-		                                                                                serverLevel),
-		                                                          "collect_sample_controller", "collect_sample");
-		return super.use(level, player, hand);
+	public InteractionResult useOn(UseOnContext pContext) {
+		Level level = pContext.getLevel();
+		if (level instanceof ServerLevel serverLevel) {
+			Player player = pContext.getPlayer();
+			BlockPos pos = pContext.getClickedPos();
+			Direction face = pContext.getClickedFace();
+			
+			ChunkAccess chunk = serverLevel.getChunk(pos);
+			if (!chunk.hasAttachments() || !chunk.hasData(CHUNK_SAMPLE_SITE_MAP)) return InteractionResult.PASS;
+			
+			ChunkSampleSiteMap chunkSampleSiteMap = chunk.getData(CHUNK_SAMPLE_SITE_MAP);
+			boolean isSampleSite = ChunkSampleSiteMapUtil.isSurfaceOrDeep(chunkSampleSiteMap, pos);
+			if (isSampleSite) {
+				Optional<SampleSiteRegion> region = SampleSiteRegion.getRegion(pos.getY());
+				if (region.isEmpty()) return InteractionResult.PASS;
+				
+				Direction neededFace = switch (region.get()) {
+					case SURFACE -> chunkSampleSiteMap.surfaceFace();
+					case DEEP -> chunkSampleSiteMap.deepFace();
+				};
+				
+				if (face != neededFace) return InteractionResult.FAIL;
+				
+				ItemStack offHandStack = player.getItemInHand(InteractionHand.OFF_HAND);
+				
+				
+				boolean hasSampleTubeOnHand = offHandStack.getItem() instanceof EmptySampleTubeItem;
+				
+				if(!hasSampleTubeOnHand) return InteractionResult.FAIL;
+				
+				EmptySampleTubeItem emptySampleTubeItem = (EmptySampleTubeItem) offHandStack.getItem();
+				
+				switch (region.get()) {
+					case SURFACE -> {
+						chunkSampleSiteMap = ChunkSampleSiteMapUtil.resetDefaultSurface(chunkSampleSiteMap);
+					}
+					case DEEP -> {
+						chunkSampleSiteMap = ChunkSampleSiteMapUtil.resetDefaultDeep(chunkSampleSiteMap);
+					}
+				}
+				
+				chunk.setData(CHUNK_SAMPLE_SITE_MAP, chunkSampleSiteMap);
+				ClientSampleSiteMapUpdatePayload payload = new ClientSampleSiteMapUpdatePayload(chunk.getPos(),
+				                                                                                chunkSampleSiteMap);
+				PacketDistributor.sendToPlayersTrackingChunk(serverLevel, chunk.getPos(), payload);
+				
+				triggerAnim(player, GeoItem.getOrAssignId(player.getItemInHand(InteractionHand.MAIN_HAND), serverLevel),
+				           "collect_sample_controller", "collect_sample");
+				
+				setDamage(player.getItemInHand(InteractionHand.MAIN_HAND),
+				          getDamage(player.getItemInHand(InteractionHand.MAIN_HAND)) + 1);
+				
+				emptySampleTubeItem.handleSampleCollection(chunk.getPos(), region.get(), player, serverLevel);
+				
+				return InteractionResult.CONSUME;
+				
+			}
+			
+			return InteractionResult.PASS;
+		}
+		return super.useOn(pContext);
 	}
 	
 	@Override
@@ -144,8 +202,7 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						if (needsCollection) {
 							String message = String.format(
 								"This chunk already has a surface sampling site. Please collect the surface sample " +
-								"at" +
-								" %s" + " before placing a new one", chunkSampleSiteMap.surfacePos());
+								"at" + " %s" + " before placing a new one", chunkSampleSiteMap.surfacePos());
 							player.sendSystemMessage(Component.literal(message));
 							return;
 						}
@@ -189,10 +246,12 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 						                                            chunkSampleSiteMap.surfaceFace(), face);
 						chunk.setData(CHUNK_SAMPLE_SITE_MAP, chunkSampleSiteMap);
 						ClientSampleSiteMapUpdatePayload payload = new ClientSampleSiteMapUpdatePayload(chunk.getPos(),
-						                                                                              chunkSampleSiteMap);
+						                                                                                chunkSampleSiteMap);
 						PacketDistributor.sendToPlayersTrackingChunk(serverLevel, chunk.getPos(), payload);
 					}
 				}
+				
+				setDamage(itemStack, getDamage(itemStack) + 1);
 				
 			}
 		}
