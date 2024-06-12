@@ -61,6 +61,7 @@ public class EN_US_Generator extends LanguageProvider {
 	   addItem(Registry.Items.PROSPECTING_PICK, "Prospecting Pick");
 	   addItem(Registry.Items.EMPTY_SAMPLE_TUBE, "Empty Sample Tube");
 	   addItem(Registry.Items.FILLED_SAMPLE_TUBE, "Filled Sample Tube");
+	   addItem(Registry.Items.SCREWDRIVER, "Screwdriver");
 	   //endregion
 		
 		//region Tooltips

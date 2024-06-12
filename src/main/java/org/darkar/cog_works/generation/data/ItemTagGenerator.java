@@ -4,7 +4,9 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import org.darkar.cog_works.Registry;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -19,6 +21,11 @@ public class ItemTagGenerator extends ItemTagsProvider {
 
 	@Override
 	protected void addTags(HolderLookup.Provider pProvider) {
-
+		tag(Tags.Items.TOOLS).add(
+			Registry.Items.PROSPECTING_PICK.get(),
+			Registry.Items.SCREWDRIVER.get(),
+			Registry.Items.EMPTY_SAMPLE_TUBE.get(),
+			Registry.Items.FILLED_SAMPLE_TUBE.get()
+		                         );
 	}
 }

@@ -15,6 +15,7 @@ import net.neoforged.neoforge.registries.*;
 import org.darkar.cog_works.item.EmptySampleTubeItem;
 import org.darkar.cog_works.item.FilledSampleTubeItem;
 import org.darkar.cog_works.item.ProspectingPickItem;
+import org.darkar.cog_works.item.ScrewdriverItem;
 import org.darkar.cog_works.item.component.IsDiggingSample;
 import org.darkar.cog_works.item.component.SampleLocation;
 import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
@@ -437,6 +438,8 @@ public class Registry {
 		                                                                                      EmptySampleTubeItem::new);
 		public static final DeferredItem<Item> FILLED_SAMPLE_TUBE = DEFERRED_REGISTRY.register("filled_sample_tube",
 		                                                                                       FilledSampleTubeItem::new);
+		
+		public static final DeferredItem<Item> SCREWDRIVER = DEFERRED_REGISTRY.register("screwdriver", ScrewdriverItem::new);
 		//endregion
 		
 		//endregion

@@ -42,6 +42,7 @@
   "item.cog_works.empty_sample_tube": "Empty Sample Tube",
   "item.cog_works.filled_sample_tube": "Filled Sample Tube",
   "item.cog_works.prospecting_pick": "Prospecting Pick",
+  "item.cog_works.screwdriver": "Screwdriver",
   "tooltip.cog_works.sample_location.chunk_pos": "Chunk Sample: [x: %s, z: %s]",
   "tooltip.cog_works.sample_location.region": "Sample Region: %s"
 }
