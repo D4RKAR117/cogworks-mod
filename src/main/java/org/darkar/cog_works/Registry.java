@@ -37,294 +37,337 @@ public class Registry {
 		private static final DeferredRegister.Blocks DEFERRED_REGISTRY = DeferredRegister.createBlocks(MOD_ID);
 		// Tungsten Ore
 		public static final DeferredBlock<Block> TUNGSTEN_ORE = DEFERRED_REGISTRY.registerSimpleBlock("tungsten_ore",
-		                                                                                              BlockBehaviour.Properties
-			                                                                                              .of()
-			                                                                                              .strength(
-				                                                                                              3.0F,
-				                                                                                              3.0F)
-			                                                                                              .lightLevel(
-				                                                                                              (state) -> 7)
-			                                                                                              .sound(
-				                                                                                              SoundType.STONE)
+		                                                                                              BlockBehaviour.Properties.of()
+		                                                                                                                       .strength(
+			                                                                                                                       3.0F,
+			                                                                                                                       3.0F)
+		                                                                                                                       .lightLevel(
+			                                                                                                                       (state) -> 7)
+		                                                                                                                       .sound(
+			                                                                                                                       SoundType.STONE)
 		                                                                                             
 		                                                                                             );
 		public static final DeferredBlock<Block> DEEPSLATE_TUNGSTEN_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_tungsten_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_tungsten_ore", BlockBehaviour.Properties.of()
+			                                                   .strength(4.5F, 3.0F)
+			                                                   .lightLevel((state) -> 7)
 			                                                   .sound(SoundType.DEEPSLATE)
 		                                                                                                       
 		                                                                                                       );
 		// Titanium Ore
 		public static final DeferredBlock<Block> TITANIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("titanium_ore",
-		                                                                                              BlockBehaviour.Properties
-			                                                                                              .of()
-			                                                                                              .strength(
-				                                                                                              3.0F,
-				                                                                                              3.0F)
-			                                                                                              .lightLevel(
-				                                                                                              (state) -> 7)
-			                                                                                              .sound(
-				                                                                                              SoundType.STONE)
+		                                                                                              BlockBehaviour.Properties.of()
+		                                                                                                                       .strength(
+			                                                                                                                       3.0F,
+			                                                                                                                       3.0F)
+		                                                                                                                       .lightLevel(
+			                                                                                                                       (state) -> 7)
+		                                                                                                                       .sound(
+			                                                                                                                       SoundType.STONE)
 		                                                                                             
 		                                                                                             );
 		public static final DeferredBlock<Block> DEEPSLATE_TITANIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_titanium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_titanium_ore", BlockBehaviour.Properties.of()
+			                                                   .strength(4.5F, 3.0F)
+			                                                   .lightLevel((state) -> 7)
 			                                                   .sound(SoundType.DEEPSLATE)
 		                                                                                                       
 		                                                                                                       );
 		// Cobalt Ore
 		public static final DeferredBlock<Block> COBALT_ORE = DEFERRED_REGISTRY.registerSimpleBlock("cobalt_ore",
-		                                                                                            BlockBehaviour.Properties
-			                                                                                            .of().strength(
-			                                                                                                          3.0F, 3.0F)
-			                                                                                            .lightLevel(
-				                                                                                            (state) -> 7)
-			                                                                                            .sound(
-				                                                                                            SoundType.STONE)
+		                                                                                            BlockBehaviour.Properties.of()
+		                                                                                                                     .strength(
+			                                                                                                                     3.0F,
+			                                                                                                                     3.0F)
+		                                                                                                                     .lightLevel(
+			                                                                                                                     (state) -> 7)
+		                                                                                                                     .sound(
+			                                                                                                                     SoundType.STONE)
 		                                                                                           
 		                                                                                           );
 		public static final DeferredBlock<Block> DEEPSLATE_COBALT_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_cobalt_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_cobalt_ore", BlockBehaviour.Properties.of()
+			                                                 .strength(4.5F, 3.0F)
+			                                                 .lightLevel((state) -> 7)
 			                                                 .sound(SoundType.DEEPSLATE)
 		                                                                                                     
 		                                                                                                     );
 		// Nickel Ore
 		public static final DeferredBlock<Block> NICKEL_ORE = DEFERRED_REGISTRY.registerSimpleBlock("nickel_ore",
-		                                                                                            BlockBehaviour.Properties
-			                                                                                            .of().strength(
-			                                                                                                          3.0F, 3.0F)
-			                                                                                            .lightLevel(
-				                                                                                            (state) -> 7)
-			                                                                                            .sound(
-				                                                                                            SoundType.STONE)
+		                                                                                            BlockBehaviour.Properties.of()
+		                                                                                                                     .strength(
+			                                                                                                                     3.0F,
+			                                                                                                                     3.0F)
+		                                                                                                                     .lightLevel(
+			                                                                                                                     (state) -> 7)
+		                                                                                                                     .sound(
+			                                                                                                                     SoundType.STONE)
 		                                                                                           
 		                                                                                           );
 		public static final DeferredBlock<Block> DEEPSLATE_NICKEL_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_nickel_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_nickel_ore", BlockBehaviour.Properties.of()
+			                                                 .strength(4.5F, 3.0F)
+			                                                 .lightLevel((state) -> 7)
 			                                                 .sound(SoundType.DEEPSLATE)
 		                                                                                                     
 		                                                                                                     );
 		// Bauxite Ore
 		public static final DeferredBlock<Block> BAUXITE_ORE = DEFERRED_REGISTRY.registerSimpleBlock("bauxite_ore",
-		                                                                                             BlockBehaviour.Properties
-			                                                                                             .of().strength(
-			                                                                                                           3.0F, 3.0F)
-			                                                                                             .lightLevel(
-				                                                                                             (state) -> 7)
-			                                                                                             .sound(
-				                                                                                             SoundType.STONE)
+		                                                                                             BlockBehaviour.Properties.of()
+		                                                                                                                      .strength(
+			                                                                                                                      3.0F,
+			                                                                                                                      3.0F)
+		                                                                                                                      .lightLevel(
+			                                                                                                                      (state) -> 7)
+		                                                                                                                      .sound(
+			                                                                                                                      SoundType.STONE)
 		                                                                                            
 		                                                                                            );
 		public static final DeferredBlock<Block> DEEPSLATE_BAUXITE_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_bauxite_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_bauxite_ore", BlockBehaviour.Properties.of()
+			                                                  .strength(4.5F, 3.0F)
+			                                                  .lightLevel((state) -> 7)
 			                                                  .sound(SoundType.DEEPSLATE)
 		                                                                                                      
 		                                                                                                      );
 		// Molybdenum Ore
 		public static final DeferredBlock<Block> MOLYBDENUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"molybdenum_ore", BlockBehaviour.Properties.of().strength(3.0F, 3.0F).lightLevel((state) -> 7)
+			"molybdenum_ore", BlockBehaviour.Properties.of()
+			                                           .strength(3.0F, 3.0F)
+			                                           .lightLevel((state) -> 7)
 			                                           .sound(SoundType.STONE)
 		                                                                                               
 		                                                                                               );
 		public static final DeferredBlock<Block> DEEPSLATE_MOLYBDENUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_molybdenum_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_molybdenum_ore", BlockBehaviour.Properties.of()
+			                                                     .strength(4.5F, 3.0F)
+			                                                     .lightLevel((state) -> 7)
 			                                                     .sound(SoundType.DEEPSLATE)
 		                                                                                                         
 		                                                                                                         );
 		// Iridium Ore
 		public static final DeferredBlock<Block> IRIDIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("iridium_ore",
-		                                                                                             BlockBehaviour.Properties
-			                                                                                             .of().strength(
-			                                                                                                           3.0F, 3.0F)
-			                                                                                             .lightLevel(
-				                                                                                             (state) -> 7)
-			                                                                                             .sound(
-				                                                                                             SoundType.STONE)
+		                                                                                             BlockBehaviour.Properties.of()
+		                                                                                                                      .strength(
+			                                                                                                                      3.0F,
+			                                                                                                                      3.0F)
+		                                                                                                                      .lightLevel(
+			                                                                                                                      (state) -> 7)
+		                                                                                                                      .sound(
+			                                                                                                                      SoundType.STONE)
 		                                                                                            
 		                                                                                            );
 		public static final DeferredBlock<Block> DEEPSLATE_IRIDIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_iridium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_iridium_ore", BlockBehaviour.Properties.of()
+			                                                  .strength(4.5F, 3.0F)
+			                                                  .lightLevel((state) -> 7)
 			                                                  .sound(SoundType.DEEPSLATE)
 		                                                                                                      
 		                                                                                                      );
 		// Lithium Ore
 		public static final DeferredBlock<Block> LITHIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("lithium_ore",
-		                                                                                             BlockBehaviour.Properties
-			                                                                                             .of().strength(
-			                                                                                                           3.0F, 3.0F)
-			                                                                                             .lightLevel(
-				                                                                                             (state) -> 7)
-			                                                                                             .sound(
-				                                                                                             SoundType.STONE)
+		                                                                                             BlockBehaviour.Properties.of()
+		                                                                                                                      .strength(
+			                                                                                                                      3.0F,
+			                                                                                                                      3.0F)
+		                                                                                                                      .lightLevel(
+			                                                                                                                      (state) -> 7)
+		                                                                                                                      .sound(
+			                                                                                                                      SoundType.STONE)
 		                                                                                            
 		                                                                                            );
 		public static final DeferredBlock<Block> DEEPSLATE_LITHIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_lithium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_lithium_ore", BlockBehaviour.Properties.of()
+			                                                  .strength(4.5F, 3.0F)
+			                                                  .lightLevel((state) -> 7)
 			                                                  .sound(SoundType.DEEPSLATE)
 		                                                                                                      
 		                                                                                                      );
 		//Platinum Ore
 		public static final DeferredBlock<Block> PLATINUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("platinum_ore",
-		                                                                                              BlockBehaviour.Properties
-			                                                                                              .of()
-			                                                                                              .strength(
-				                                                                                              3.0F,
-				                                                                                              3.0F)
-			                                                                                              .lightLevel(
-				                                                                                              (state) -> 7)
-			                                                                                              .sound(
-				                                                                                              SoundType.STONE)
+		                                                                                              BlockBehaviour.Properties.of()
+		                                                                                                                       .strength(
+			                                                                                                                       3.0F,
+			                                                                                                                       3.0F)
+		                                                                                                                       .lightLevel(
+			                                                                                                                       (state) -> 7)
+		                                                                                                                       .sound(
+			                                                                                                                       SoundType.STONE)
 		                                                                                             
 		                                                                                             );
 		public static final DeferredBlock<Block> DEEPSLATE_PLATINUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_platinum_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_platinum_ore", BlockBehaviour.Properties.of()
+			                                                   .strength(4.5F, 3.0F)
+			                                                   .lightLevel((state) -> 7)
 			                                                   .sound(SoundType.DEEPSLATE)
 		                                                                                                       
 		                                                                                                       );
 		// Graphite Ore
 		public static final DeferredBlock<Block> GRAPHITE_ORE = DEFERRED_REGISTRY.registerSimpleBlock("graphite_ore",
-		                                                                                              BlockBehaviour.Properties
-			                                                                                              .of()
-			                                                                                              .strength(
-				                                                                                              3.0F,
-				                                                                                              3.0F)
-			                                                                                              .lightLevel(
-				                                                                                              (state) -> 7)
-			                                                                                              .sound(
-				                                                                                              SoundType.STONE)
+		                                                                                              BlockBehaviour.Properties.of()
+		                                                                                                                       .strength(
+			                                                                                                                       3.0F,
+			                                                                                                                       3.0F)
+		                                                                                                                       .lightLevel(
+			                                                                                                                       (state) -> 7)
+		                                                                                                                       .sound(
+			                                                                                                                       SoundType.STONE)
 		                                                                                             
 		                                                                                             );
 		public static final DeferredBlock<Block> DEEPSLATE_GRAPHITE_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_graphite_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_graphite_ore", BlockBehaviour.Properties.of()
+			                                                   .strength(4.5F, 3.0F)
+			                                                   .lightLevel((state) -> 7)
 			                                                   .sound(SoundType.DEEPSLATE));
 		// Beryllium Ore
 		public static final DeferredBlock<Block> BERYLLIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("beryllium_ore",
-		                                                                                               BlockBehaviour.Properties
-			                                                                                               .of()
-			                                                                                               .strength(
-				                                                                                               3.0F,
-				                                                                                               3.0F)
-			                                                                                               .lightLevel(
-				                                                                                               (state) -> 7)
-			                                                                                               .sound(
-				                                                                                               SoundType.STONE));
+		                                                                                               BlockBehaviour.Properties.of()
+		                                                                                                                        .strength(
+			                                                                                                                        3.0F,
+			                                                                                                                        3.0F)
+		                                                                                                                        .lightLevel(
+			                                                                                                                        (state) -> 7)
+		                                                                                                                        .sound(
+			                                                                                                                        SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_BERYLLIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_beryllium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_beryllium_ore", BlockBehaviour.Properties.of()
+			                                                    .strength(4.5F, 3.0F)
+			                                                    .lightLevel((state) -> 7)
 			                                                    .sound(SoundType.DEEPSLATE));
 		// Cadmium Ore
 		public static final DeferredBlock<Block> CADMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("cadmium_ore",
-		                                                                                             BlockBehaviour.Properties
-			                                                                                             .of().strength(
-			                                                                                                           3.0F, 3.0F)
-			                                                                                             .lightLevel(
-				                                                                                             (state) -> 7)
-			                                                                                             .sound(
-				                                                                                             SoundType.STONE));
+		                                                                                             BlockBehaviour.Properties.of()
+		                                                                                                                      .strength(
+			                                                                                                                      3.0F,
+			                                                                                                                      3.0F)
+		                                                                                                                      .lightLevel(
+			                                                                                                                      (state) -> 7)
+		                                                                                                                      .sound(
+			                                                                                                                      SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_CADMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_cadmium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_cadmium_ore", BlockBehaviour.Properties.of()
+			                                                  .strength(4.5F, 3.0F)
+			                                                  .lightLevel((state) -> 7)
 			                                                  .sound(SoundType.DEEPSLATE));
 		// Chromium Ore
 		public static final DeferredBlock<Block> CHROMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("chromium_ore",
-		                                                                                              BlockBehaviour.Properties
-			                                                                                              .of()
-			                                                                                              .strength(
-				                                                                                              3.0F,
-				                                                                                              3.0F)
-			                                                                                              .lightLevel(
-				                                                                                              (state) -> 7)
-			                                                                                              .sound(
-				                                                                                              SoundType.STONE));
+		                                                                                              BlockBehaviour.Properties.of()
+		                                                                                                                       .strength(
+			                                                                                                                       3.0F,
+			                                                                                                                       3.0F)
+		                                                                                                                       .lightLevel(
+			                                                                                                                       (state) -> 7)
+		                                                                                                                       .sound(
+			                                                                                                                       SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_CHROMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_chromium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_chromium_ore", BlockBehaviour.Properties.of()
+			                                                   .strength(4.5F, 3.0F)
+			                                                   .lightLevel((state) -> 7)
 			                                                   .sound(SoundType.DEEPSLATE));
 		//Manganese Ore
 		public static final DeferredBlock<Block> MANGANESE_ORE = DEFERRED_REGISTRY.registerSimpleBlock("manganese_ore",
-		                                                                                               BlockBehaviour.Properties
-			                                                                                               .of()
-			                                                                                               .strength(
-				                                                                                               3.0F,
-				                                                                                               3.0F)
-			                                                                                               .lightLevel(
-				                                                                                               (state) -> 7)
-			                                                                                               .sound(
-				                                                                                               SoundType.STONE));
+		                                                                                               BlockBehaviour.Properties.of()
+		                                                                                                                        .strength(
+			                                                                                                                        3.0F,
+			                                                                                                                        3.0F)
+		                                                                                                                        .lightLevel(
+			                                                                                                                        (state) -> 7)
+		                                                                                                                        .sound(
+			                                                                                                                        SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_MANGANESE_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_manganese_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_manganese_ore", BlockBehaviour.Properties.of()
+			                                                    .strength(4.5F, 3.0F)
+			                                                    .lightLevel((state) -> 7)
 			                                                    .sound(SoundType.DEEPSLATE));
 		// Osmium Ore
 		public static final DeferredBlock<Block> OSMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("osmium_ore",
-		                                                                                            BlockBehaviour.Properties
-			                                                                                            .of().strength(
-			                                                                                                          3.0F, 3.0F)
-			                                                                                            .lightLevel(
-				                                                                                            (state) -> 7)
-			                                                                                            .sound(
-				                                                                                            SoundType.STONE));
+		                                                                                            BlockBehaviour.Properties.of()
+		                                                                                                                     .strength(
+			                                                                                                                     3.0F,
+			                                                                                                                     3.0F)
+		                                                                                                                     .lightLevel(
+			                                                                                                                     (state) -> 7)
+		                                                                                                                     .sound(
+			                                                                                                                     SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_OSMIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_osmium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_osmium_ore", BlockBehaviour.Properties.of()
+			                                                 .strength(4.5F, 3.0F)
+			                                                 .lightLevel((state) -> 7)
 			                                                 .sound(SoundType.DEEPSLATE));
 		// Palladium Ore
 		public static final DeferredBlock<Block> PALLADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("palladium_ore",
-		                                                                                               BlockBehaviour.Properties
-			                                                                                               .of()
-			                                                                                               .strength(
-				                                                                                               3.0F,
-				                                                                                               3.0F)
-			                                                                                               .lightLevel(
-				                                                                                               (state) -> 7)
-			                                                                                               .sound(
-				                                                                                               SoundType.STONE));
+		                                                                                               BlockBehaviour.Properties.of()
+		                                                                                                                        .strength(
+			                                                                                                                        3.0F,
+			                                                                                                                        3.0F)
+		                                                                                                                        .lightLevel(
+			                                                                                                                        (state) -> 7)
+		                                                                                                                        .sound(
+			                                                                                                                        SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_PALLADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_palladium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_palladium_ore", BlockBehaviour.Properties.of()
+			                                                    .strength(4.5F, 3.0F)
+			                                                    .lightLevel((state) -> 7)
 			                                                    .sound(SoundType.DEEPSLATE));
 		//Thorium Ore
 		public static final DeferredBlock<Block> THORIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("thorium_ore",
-		                                                                                             BlockBehaviour.Properties
-			                                                                                             .of().strength(
-			                                                                                                           3.0F, 3.0F)
-			                                                                                             .lightLevel(
-				                                                                                             (state) -> 7)
-			                                                                                             .sound(
-				                                                                                             SoundType.STONE));
+		                                                                                             BlockBehaviour.Properties.of()
+		                                                                                                                      .strength(
+			                                                                                                                      3.0F,
+			                                                                                                                      3.0F)
+		                                                                                                                      .lightLevel(
+			                                                                                                                      (state) -> 7)
+		                                                                                                                      .sound(
+			                                                                                                                      SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_THORIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_thorium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_thorium_ore", BlockBehaviour.Properties.of()
+			                                                  .strength(4.5F, 3.0F)
+			                                                  .lightLevel((state) -> 7)
 			                                                  .sound(SoundType.DEEPSLATE));
 		//Uranium Ore
 		public static final DeferredBlock<Block> URANIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("uranium_ore",
-		                                                                                             BlockBehaviour.Properties
-			                                                                                             .of().strength(
-			                                                                                                           3.0F, 3.0F)
-			                                                                                             .lightLevel(
-				                                                                                             (state) -> 7)
-			                                                                                             .sound(
-				                                                                                             SoundType.STONE));
+		                                                                                             BlockBehaviour.Properties.of()
+		                                                                                                                      .strength(
+			                                                                                                                      3.0F,
+			                                                                                                                      3.0F)
+		                                                                                                                      .lightLevel(
+			                                                                                                                      (state) -> 7)
+		                                                                                                                      .sound(
+			                                                                                                                      SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_URANIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_uranium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_uranium_ore", BlockBehaviour.Properties.of()
+			                                                  .strength(4.5F, 3.0F)
+			                                                  .lightLevel((state) -> 7)
 			                                                  .sound(SoundType.DEEPSLATE));
 		//Vanadium Ore
 		public static final DeferredBlock<Block> VANADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock("vanadium_ore",
-		                                                                                              BlockBehaviour.Properties
-			                                                                                              .of()
-			                                                                                              .strength(
-				                                                                                              3.0F,
-				                                                                                              3.0F)
-			                                                                                              .lightLevel(
-				                                                                                              (state) -> 7)
-			                                                                                              .sound(
-				                                                                                              SoundType.STONE));
+		                                                                                              BlockBehaviour.Properties.of()
+		                                                                                                                       .strength(
+			                                                                                                                       3.0F,
+			                                                                                                                       3.0F)
+		                                                                                                                       .lightLevel(
+			                                                                                                                       (state) -> 7)
+		                                                                                                                       .sound(
+			                                                                                                                       SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_VANADIUM_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_vanadium_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_vanadium_ore", BlockBehaviour.Properties.of()
+			                                                   .strength(4.5F, 3.0F)
+			                                                   .lightLevel((state) -> 7)
 			                                                   .sound(SoundType.DEEPSLATE));
 		//Zinc Ore
 		public static final DeferredBlock<Block> ZINC_ORE = DEFERRED_REGISTRY.registerSimpleBlock("zinc_ore",
-		                                                                                          BlockBehaviour.Properties
-			                                                                                          .of().strength(
-			                                                                                                        3.0F, 3.0F)
-			                                                                                          .lightLevel(
-				                                                                                          (state) -> 7)
-			                                                                                          .sound(
-				                                                                                          SoundType.STONE));
+		                                                                                          BlockBehaviour.Properties.of()
+		                                                                                                                   .strength(
+			                                                                                                                   3.0F,
+			                                                                                                                   3.0F)
+		                                                                                                                   .lightLevel(
+			                                                                                                                   (state) -> 7)
+		                                                                                                                   .sound(
+			                                                                                                                   SoundType.STONE));
 		public static final DeferredBlock<Block> DEEPSLATE_ZINC_ORE = DEFERRED_REGISTRY.registerSimpleBlock(
-			"deepslate_zinc_ore", BlockBehaviour.Properties.of().strength(4.5F, 3.0F).lightLevel((state) -> 7)
+			"deepslate_zinc_ore", BlockBehaviour.Properties.of()
+			                                               .strength(4.5F, 3.0F)
+			                                               .lightLevel((state) -> 7)
 			                                               .sound(SoundType.DEEPSLATE));
 		
 		private static void init(IEventBus bus) {
@@ -356,11 +399,11 @@ public class Registry {
 			public static final TagKey<Block> ZINC_ORES = createConventional("ores/zinc");
 			
 			private static TagKey<Block> createConventional(String name) {
-				return TagKey.create(Registries.BLOCK, new ResourceLocation("c", name));
+				return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath("c", name));
 			}
 			
 			private static TagKey<Block> createCustom(String name) {
-				return TagKey.create(Registries.BLOCK, new ResourceLocation(MOD_ID, name));
+				return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, name));
 			}
 		}
 	}
@@ -439,7 +482,8 @@ public class Registry {
 		public static final DeferredItem<Item> FILLED_SAMPLE_TUBE = DEFERRED_REGISTRY.register("filled_sample_tube",
 		                                                                                       FilledSampleTubeItem::new);
 		
-		public static final DeferredItem<Item> SCREWDRIVER = DEFERRED_REGISTRY.register("screwdriver", ScrewdriverItem::new);
+		public static final DeferredItem<Item> SCREWDRIVER = DEFERRED_REGISTRY.register("screwdriver",
+		                                                                                ScrewdriverItem::new);
 		//endregion
 		
 		//endregion
@@ -469,13 +513,12 @@ public class Registry {
 					                                                                      IsDiggingSample.STREAM_CODEC)
 				                                                                      .build());
 			public static final DeferredHolder<DataComponentType<?>, DataComponentType<SampleLocation>>
-				SAMPLE_LOCATION =
-				DEFERRED_REGISTRY.register("sample_chunk_location",
-				                           () -> DataComponentType.<SampleLocation>builder()
-				                                                    .persistent(SampleLocation.CODEC)
-				                                                    .networkSynchronized(
-					                                                    SampleLocation.STREAM_CODEC)
-				                                                    .build());
+				SAMPLE_LOCATION = DEFERRED_REGISTRY.register("sample_chunk_location",
+				                                             () -> DataComponentType.<SampleLocation>builder()
+				                                                                    .persistent(SampleLocation.CODEC)
+				                                                                    .networkSynchronized(
+					                                                                    SampleLocation.STREAM_CODEC)
+				                                                                    .build());
 			
 			private static void init(IEventBus bus) {
 				LOGGER.info("[Cog Works] Registering item data components ...");
@@ -490,7 +533,10 @@ public class Registry {
 		
 		public static final DeferredHolder<AttachmentType<?>, AttachmentType<ChunkSampleSiteMap>>
 			CHUNK_SAMPLE_SITE_MAP = DEFERRED_REGISTRY.register("chunk_sample_site_map", () -> AttachmentType.builder(
-			() -> ChunkSampleSiteMap.DEFAULT).serialize(ChunkSampleSiteMap.CODEC).build());
+				                                                                                                () -> ChunkSampleSiteMap.DEFAULT)
+			                                                                                                .serialize(
+				                                                                                                ChunkSampleSiteMap.CODEC)
+			                                                                                                .build());
 		
 		
 		private static void init(IEventBus bus) {

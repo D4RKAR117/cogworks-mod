@@ -20,7 +20,7 @@ public class WorldDataGenerator extends DatapackBuiltinEntriesProvider {
 		.add(Registries.CONFIGURED_FEATURE, ConfiguredFeatures::bootstrap)
 		.add(Registries.PLACED_FEATURE, PlacedFeatures::bootstrap)
 		.add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, BiomeModifiers::bootstrap);
-
+	
 	/**
 	 * Constructs a new data pack provider which generates all registry objects
 	 * from the provided mods using the holder.
@@ -29,6 +29,6 @@ public class WorldDataGenerator extends DatapackBuiltinEntriesProvider {
 	 * @param registries a future of a lookup for registries and their objects
 	 */
 	public WorldDataGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
-		super(output, registries, BUILDER,Set.of(MOD_ID));
+		super(output, registries, BUILDER, Set.of(MOD_ID));
 	}
 }

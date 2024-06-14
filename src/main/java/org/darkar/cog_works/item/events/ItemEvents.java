@@ -16,7 +16,7 @@ import static org.darkar.cog_works.CogWorks.MOD_ID;
 
 @EventBusSubscriber(modid = MOD_ID)
 public class ItemEvents {
-
+	
 	@SubscribeEvent
 	public static void onPlayerLeftClickBlock(PlayerInteractEvent.LeftClickBlock event) {
 		ItemStack itemStack = event.getItemStack();
@@ -27,20 +27,21 @@ public class ItemEvents {
 		Direction face = event.getFace();
 		LogicalSide side = event.getSide();
 		PlayerInteractEvent.LeftClickBlock.Action action = event.getAction();
-
-
+		
+		
 		if (itemStack.isEmpty()) return;
 		if (item instanceof ProspectingPickItem) {
 			if (side.isServer()) {
-				if(!player.isCreative() && action == PlayerInteractEvent.LeftClickBlock.Action.START) {
-					if(!event.isCanceled()) ((ProspectingPickItem) item).handleLeftClickBlock(player, level, pos, face);
+				if (!player.isCreative() && action == PlayerInteractEvent.LeftClickBlock.Action.START) {
+					if (!event.isCanceled()) ((ProspectingPickItem) item).handleLeftClickBlock(player, level, pos,
+					                                                                           face);
 					event.setCanceled(true);
 				}
 				return;
 			}
-
-			if(side.isClient()) event.setCanceled(true);
+			
+			if (side.isClient()) event.setCanceled(true);
 		}
 	}
-
+	
 }

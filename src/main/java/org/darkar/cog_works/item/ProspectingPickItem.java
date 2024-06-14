@@ -47,12 +47,16 @@ import static org.darkar.cog_works.Registry.Items.DataComponents.IS_DIGGING_SAMP
 
 public class ProspectingPickItem extends Item implements GeoItem, IItemExtension {
 	
-	private static final RawAnimation DIG_SAMPLE = RawAnimation.begin().thenPlay(
-		"animation.prospecting_pick.dig_sample");
-	private static final RawAnimation COLLECT_SAMPLE = RawAnimation.begin().thenPlay(
-		"animation.prospecting_pick.collect_sample");
-	private static final Properties itemProperties = new Properties().stacksTo(1).durability(128).component(
-		IS_DIGGING_SAMPLE, IsDiggingSample.DEFAULT);
+	private static final RawAnimation DIG_SAMPLE = RawAnimation
+		.begin()
+		.thenPlay("animation.prospecting_pick.dig_sample");
+	private static final RawAnimation COLLECT_SAMPLE = RawAnimation
+		.begin()
+		.thenPlay("animation.prospecting_pick.collect_sample");
+	private static final Properties itemProperties = new Properties()
+		.stacksTo(1)
+		.durability(128)
+		.component(IS_DIGGING_SAMPLE, IsDiggingSample.DEFAULT);
 	private static final int COOLDOWN_TICKS = 8 * 20;
 	
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -124,7 +128,7 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 				
 				boolean hasSampleTubeOnHand = offHandStack.getItem() instanceof EmptySampleTubeItem;
 				
-				if(!hasSampleTubeOnHand) return InteractionResult.FAIL;
+				if (!hasSampleTubeOnHand) return InteractionResult.FAIL;
 				
 				EmptySampleTubeItem emptySampleTubeItem = (EmptySampleTubeItem) offHandStack.getItem();
 				
@@ -142,8 +146,9 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 				                                                                                chunkSampleSiteMap);
 				PacketDistributor.sendToPlayersTrackingChunk(serverLevel, chunk.getPos(), payload);
 				
-				triggerAnim(player, GeoItem.getOrAssignId(player.getItemInHand(InteractionHand.MAIN_HAND), serverLevel),
-				           "collect_sample_controller", "collect_sample");
+				triggerAnim(player, GeoItem.getOrAssignId(player.getItemInHand(InteractionHand.MAIN_HAND),
+				                                          serverLevel),
+				            "collect_sample_controller", "collect_sample");
 				
 				setDamage(player.getItemInHand(InteractionHand.MAIN_HAND),
 				          getDamage(player.getItemInHand(InteractionHand.MAIN_HAND)) + 1);
@@ -192,13 +197,18 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 				ChunkSampleSiteMap chunkSampleSiteMap = chunk.getData(CHUNK_SAMPLE_SITE_MAP);
 				switch (region.get()) {
 					case SURFACE -> {
-						boolean needsCollection = !chunkSampleSiteMap.surfacePos().equals(BlockPos.ZERO) &&
-						                          (!chunkSampleSiteMap.surfaceState().isAir() &&
-						                           serverLevel.getBlockState(chunkSampleSiteMap.surfacePos()).is(
-							                           tagsPerRegion.get(SampleSiteRegion.SURFACE)));
+						boolean needsCollection = !chunkSampleSiteMap
+							.surfacePos()
+							.equals(BlockPos.ZERO) && (!chunkSampleSiteMap
+							.surfaceState()
+							.isAir() && serverLevel
+								                           .getBlockState(chunkSampleSiteMap.surfacePos())
+								                           .is(tagsPerRegion.get(SampleSiteRegion.SURFACE)));
 						
 						itemStack.set(IS_DIGGING_SAMPLE, isDiggingSample);
-						player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
+						player
+							.getCooldowns()
+							.addCooldown(this, COOLDOWN_TICKS);
 						if (needsCollection) {
 							String message = String.format(
 								"This chunk already has a surface sampling site. Please collect the surface sample " +
@@ -223,13 +233,18 @@ public class ProspectingPickItem extends Item implements GeoItem, IItemExtension
 					}
 					
 					case DEEP -> {
-						boolean needsCollection = !chunkSampleSiteMap.deepPos().equals(BlockPos.ZERO) &&
-						                          (!chunkSampleSiteMap.deepState().isAir() && serverLevel.getBlockState(
-							                          chunkSampleSiteMap.deepPos()).is(
-							                          tagsPerRegion.get(SampleSiteRegion.DEEP)));
+						boolean needsCollection = !chunkSampleSiteMap
+							.deepPos()
+							.equals(BlockPos.ZERO) && (!chunkSampleSiteMap
+							.deepState()
+							.isAir() && serverLevel
+								                           .getBlockState(chunkSampleSiteMap.deepPos())
+								                           .is(tagsPerRegion.get(SampleSiteRegion.DEEP)));
 						
 						itemStack.set(IS_DIGGING_SAMPLE, isDiggingSample);
-						player.getCooldowns().addCooldown(this, COOLDOWN_TICKS);
+						player
+							.getCooldowns()
+							.addCooldown(this, COOLDOWN_TICKS);
 						if (needsCollection) {
 							String message = String.format(
 								"This chunk already has a deep sampling site. Please collect the deep sample at %s " +

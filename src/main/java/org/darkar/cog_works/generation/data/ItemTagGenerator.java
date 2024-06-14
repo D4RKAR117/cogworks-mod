@@ -15,17 +15,15 @@ import static org.darkar.cog_works.CogWorks.MOD_ID;
 
 public class ItemTagGenerator extends ItemTagsProvider {
 	public ItemTagGenerator(PackOutput pOutput, CompletableFuture<HolderLookup.Provider> pLookupProvider,
-	                        CompletableFuture<TagLookup<Block>> pBlockTags, @Nullable ExistingFileHelper existingFileHelper) {
+	                        CompletableFuture<TagLookup<Block>> pBlockTags,
+	                        @Nullable ExistingFileHelper existingFileHelper)
+	{
 		super(pOutput, pLookupProvider, pBlockTags, MOD_ID, existingFileHelper);
 	}
-
+	
 	@Override
 	protected void addTags(HolderLookup.Provider pProvider) {
-		tag(Tags.Items.TOOLS).add(
-			Registry.Items.PROSPECTING_PICK.get(),
-			Registry.Items.SCREWDRIVER.get(),
-			Registry.Items.EMPTY_SAMPLE_TUBE.get(),
-			Registry.Items.FILLED_SAMPLE_TUBE.get()
-		                         );
+		tag(Tags.Items.TOOLS).add(Registry.Items.PROSPECTING_PICK.get(), Registry.Items.SCREWDRIVER.get(),
+		                          Registry.Items.EMPTY_SAMPLE_TUBE.get(), Registry.Items.FILLED_SAMPLE_TUBE.get());
 	}
 }

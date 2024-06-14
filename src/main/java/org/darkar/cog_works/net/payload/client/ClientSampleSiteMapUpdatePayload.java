@@ -17,17 +17,17 @@ import static org.darkar.cog_works.CogWorks.LOGGER;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
 import static org.darkar.cog_works.Registry.DataAttachments.CHUNK_SAMPLE_SITE_MAP;
 
-public record ClientSampleSiteMapUpdatePayload(ChunkPos targetChunk, ChunkSampleSiteMap sampleSiteMap) implements CustomPacketPayload
+public record ClientSampleSiteMapUpdatePayload(ChunkPos targetChunk,
+                                               ChunkSampleSiteMap sampleSiteMap) implements CustomPacketPayload
 {
 	
 	public static final CustomPacketPayload.Type<ClientSampleSiteMapUpdatePayload> TYPE =
-		new CustomPacketPayload.Type<>(new ResourceLocation(MOD_ID, "update_chunk_sample_site_map"));
+		new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(MOD_ID, "update_chunk_sample_site_map"));
 	
-	public static final StreamCodec<FriendlyByteBuf, ClientSampleSiteMapUpdatePayload> STREAM_CODEC = StreamCodec.composite(
-		NeoForgeStreamCodecs.CHUNK_POS, ClientSampleSiteMapUpdatePayload::targetChunk,
-		ChunkSampleSiteMap.STREAM_CODEC, ClientSampleSiteMapUpdatePayload::sampleSiteMap,
-		ClientSampleSiteMapUpdatePayload::new
-	                                                                                                                       );
+	public static final StreamCodec<FriendlyByteBuf, ClientSampleSiteMapUpdatePayload> STREAM_CODEC =
+		StreamCodec.composite(NeoForgeStreamCodecs.CHUNK_POS, ClientSampleSiteMapUpdatePayload::targetChunk,
+		                      ChunkSampleSiteMap.STREAM_CODEC, ClientSampleSiteMapUpdatePayload::sampleSiteMap,
+		                      ClientSampleSiteMapUpdatePayload::new);
 	
 	
 	public static void handle(final ClientSampleSiteMapUpdatePayload data, final IPayloadContext ctx) {
@@ -39,8 +39,7 @@ public record ClientSampleSiteMapUpdatePayload(ChunkPos targetChunk, ChunkSample
 				ChunkAccess chunk = level.getChunk(data.targetChunk().x, data.targetChunk().z);
 				ChunkSampleSiteMap sampleSiteMap = data.sampleSiteMap();
 				
-				LOGGER.info("Client received Sample Site Map Update Payload: {}", data);
-				chunk.setData(CHUNK_SAMPLE_SITE_MAP,sampleSiteMap);
+				chunk.setData(CHUNK_SAMPLE_SITE_MAP, sampleSiteMap);
 				
 			}
 		});

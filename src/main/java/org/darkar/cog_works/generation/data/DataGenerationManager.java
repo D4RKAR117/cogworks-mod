@@ -15,19 +15,23 @@ import static org.darkar.cog_works.CogWorks.MOD_ID;
 
 @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD)
 public class DataGenerationManager {
-
+	
 	@SubscribeEvent
 	public static void onGatherData(GatherDataEvent event) {
 		DataGenerator generator = event.getGenerator();
 		PackOutput output = generator.getPackOutput();
 		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 		CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
-
+		
 		generator.addProvider(event.includeClient(), new BlockStateGenerator(output, existingFileHelper));
-		BlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(), new BlockTagGenerator(output, lookupProvider, existingFileHelper));
-		generator.addProvider(event.includeServer(), new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(), existingFileHelper));
+		BlockTagGenerator blockTagGenerator = generator.addProvider(event.includeServer(),
+		                                                            new BlockTagGenerator(output, lookupProvider,
+		                                                                                  existingFileHelper));
+		generator.addProvider(event.includeServer(),
+		                      new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(),
+		                                           existingFileHelper));
 		generator.addProvider(event.includeClient(), new EN_US_Generator(output));
-
+		
 		generator.addProvider(event.includeServer(), new WorldDataGenerator(output, lookupProvider));
 	}
 }

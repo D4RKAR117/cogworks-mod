@@ -37,134 +37,115 @@ public class BiomeModifiers {
 	public static final ResourceKey<BiomeModifier> ADD_URANIUM_ORE_MODIFIER = registerKey("uranium_ore");
 	public static final ResourceKey<BiomeModifier> ADD_VANADIUM_ORE_MODIFIER = registerKey("vanadium_ore");
 	public static final ResourceKey<BiomeModifier> ADD_ZINC_ORE_MODIFIER = registerKey("zinc_ore");
-
+	
 	public static void bootstrap(BootstrapContext<BiomeModifier> context) {
-	  HolderGetter<PlacedFeature> placedFeatures =	context.lookup(Registries.PLACED_FEATURE);
-	  HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
-
-	  context.register(ADD_TUNGSTEN_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.TUNGSTEN_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_TITANIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.TITANIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_COBALT_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.COBALT_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_NICKEL_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.NICKEL_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_PLATINUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.PLATINUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_BAUXITE_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.BAUXITE_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_MOLYBDENUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.MOLYBDENUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_LITHIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.LITHIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_IRIDIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.IRIDIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_GRAPHITE_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.GRAPHITE_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_BERYLLIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.BERYLLIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_CADMIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.CADMIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_CHROMIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.CHROMIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_MANGANESE_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.MANGANESE_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_OSMIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.OSMIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_PALLADIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.PALLADIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_THORIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.THORIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_URANIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.URANIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_VANADIUM_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.VANADIUM_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
-
-	  context.register(ADD_ZINC_ORE_MODIFIER,
-	                   new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-	                                                HolderSet.direct(placedFeatures.getOrThrow(PlacedFeatures.ZINC_ORE_PLACED_KEY)),
-	                                                GenerationStep.Decoration.UNDERGROUND_ORES
-	                   ));
+		HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+		HolderGetter<Biome> biomes = context.lookup(Registries.BIOME);
+		
+		context.register(ADD_TUNGSTEN_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.TUNGSTEN_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_TITANIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.TITANIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_COBALT_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.COBALT_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_NICKEL_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.NICKEL_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_PLATINUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.PLATINUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_BAUXITE_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.BAUXITE_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_MOLYBDENUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.MOLYBDENUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_LITHIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.LITHIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_IRIDIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.IRIDIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_GRAPHITE_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.GRAPHITE_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_BERYLLIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.BERYLLIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_CADMIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.CADMIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_CHROMIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.CHROMIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_MANGANESE_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.MANGANESE_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_OSMIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.OSMIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_PALLADIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.PALLADIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_THORIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.THORIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_URANIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.URANIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_VANADIUM_ORE_MODIFIER,
+		                 new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD), HolderSet.direct(
+			                 placedFeatures.getOrThrow(PlacedFeatures.VANADIUM_ORE_PLACED_KEY)),
+		                                              GenerationStep.Decoration.UNDERGROUND_ORES));
+		
+		context.register(ADD_ZINC_ORE_MODIFIER, new AddFeaturesBiomeModifier(biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+		                                                                     HolderSet.direct(placedFeatures.getOrThrow(
+			                                                                     PlacedFeatures.ZINC_ORE_PLACED_KEY)),
+		                                                                     GenerationStep.Decoration.UNDERGROUND_ORES));
 	}
-
+	
 	private static ResourceKey<BiomeModifier> registerKey(String name) {
-		return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS, new ResourceLocation(MOD_ID, "add_"+name));
+		return ResourceKey.create(NeoForgeRegistries.Keys.BIOME_MODIFIERS,
+		                          ResourceLocation.fromNamespaceAndPath(MOD_ID, "add_" + name));
 	}
-
+	
 }

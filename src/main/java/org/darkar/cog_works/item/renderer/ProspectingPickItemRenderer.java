@@ -8,9 +8,9 @@ import software.bernie.geckolib.renderer.GeoItemRenderer;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
 
 public class ProspectingPickItemRenderer extends GeoItemRenderer<ProspectingPickItem> {
-
-
+	
+	
 	public ProspectingPickItemRenderer() {
-		super(new DefaultedItemGeoModel<>(new ResourceLocation(MOD_ID, "prospecting_pick")));
+		super(new DefaultedItemGeoModel<>(ResourceLocation.fromNamespaceAndPath(MOD_ID, "prospecting_pick")));
 	}
 }

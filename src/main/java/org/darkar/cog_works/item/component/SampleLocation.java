@@ -12,14 +12,17 @@ public record SampleLocation(ChunkPos chunkPos, SampleSiteRegion region) {
 	
 	public static final SampleLocation DEFAULT = new SampleLocation(ChunkPos.ZERO, SampleSiteRegion.SURFACE);
 	
-	public static final Codec<SampleLocation> CODEC = RecordCodecBuilder.create(
-		instance -> instance.group(Codec.LONG.xmap(ChunkPos::new, ChunkPos::toLong).fieldOf("chunkPos")
-		                                     .forGetter(SampleLocation::chunkPos),
-		                           SampleSiteRegion.CODEC.fieldOf("region").forGetter(SampleLocation::region))
-		                    .apply(instance, SampleLocation::new));
+	public static final Codec<SampleLocation> CODEC = RecordCodecBuilder.create(instance -> instance
+		.group(Codec.LONG
+			       .xmap(ChunkPos::new, ChunkPos::toLong)
+			       .fieldOf("chunkPos")
+			       .forGetter(SampleLocation::chunkPos), SampleSiteRegion.CODEC
+			       .fieldOf("region")
+			       .forGetter(SampleLocation::region))
+		.apply(instance, SampleLocation::new));
 	
 	public static final StreamCodec<FriendlyByteBuf, SampleLocation> STREAM_CODEC = StreamCodec.composite(
-		NeoForgeStreamCodecs.CHUNK_POS, SampleLocation::chunkPos,
-		SampleSiteRegion.STREAM_CODEC, SampleLocation::region,
+		NeoForgeStreamCodecs.CHUNK_POS, SampleLocation::chunkPos, SampleSiteRegion.STREAM_CODEC,
+		SampleLocation::region,
 		SampleLocation::new);
 }

@@ -10,12 +10,12 @@ import org.darkar.cog_works.Registry;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
 
 public class BlockStateGenerator extends BlockStateProvider {
-
+	
 	public BlockStateGenerator(PackOutput output, ExistingFileHelper existingFileHelper) {
 		super(output, MOD_ID, existingFileHelper);
 	}
-
-
+	
+	
 	@Override
 	protected void registerStatesAndModels() {
 		blockWithItem(Registry.Blocks.TUNGSTEN_ORE);
@@ -59,9 +59,9 @@ public class BlockStateGenerator extends BlockStateProvider {
 		blockWithItem(Registry.Blocks.ZINC_ORE);
 		blockWithItem(Registry.Blocks.DEEPSLATE_ZINC_ORE);
 	}
-
+	
 	private void blockWithItem(DeferredBlock<?> block) {
 		simpleBlockWithItem(block.get(), cubeAll(block.get()));
 	}
-
+	
 }

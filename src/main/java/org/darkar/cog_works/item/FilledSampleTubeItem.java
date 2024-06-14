@@ -25,9 +25,12 @@ import static org.darkar.cog_works.CogWorks.MOD_ID;
 import static org.darkar.cog_works.Registry.Items.DataComponents.SAMPLE_LOCATION;
 
 public class FilledSampleTubeItem extends Item implements GeoItem {
-	private static final RawAnimation OPEN_LID = RawAnimation.begin().thenPlay("animation.filled_sample_tube.open_lid");
+	private static final RawAnimation OPEN_LID = RawAnimation
+		.begin()
+		.thenPlay("animation.filled_sample_tube.open_lid");
 	
-	private static final Properties itemProperties = new Properties().stacksTo(1)
+	private static final Properties itemProperties = new Properties()
+		.stacksTo(1)
 		.component(SAMPLE_LOCATION, SampleLocation.DEFAULT);
 	
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
@@ -70,13 +73,18 @@ public class FilledSampleTubeItem extends Item implements GeoItem {
 	public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> componentList,
 	                            TooltipFlag tooltipFlag)
 	{
-		boolean hasLocation = stack.has(SAMPLE_LOCATION) && !stack.get(SAMPLE_LOCATION).equals(SampleLocation.DEFAULT);
+		boolean hasLocation = stack.has(SAMPLE_LOCATION) && !stack
+			.get(SAMPLE_LOCATION)
+			.equals(SampleLocation.DEFAULT);
 		if (hasLocation) {
 			SampleLocation location = stack.get(SAMPLE_LOCATION);
-			MutableComponent chunkText = Component.translatable(String.format("tooltip.%s.sample_location.chunk_pos",
-			                                                                  MOD_ID), location.chunkPos().x, location.chunkPos().z);
-			MutableComponent regionText = Component.translatable(String.format("tooltip.%s.sample_location.region",
-			                                                                   MOD_ID), location.region().name());
+			MutableComponent chunkText = Component.translatable(
+				String.format("tooltip.%s.sample_location.chunk_pos", MOD_ID), location.chunkPos().x,
+				location.chunkPos().z);
+			MutableComponent regionText = Component.translatable(
+				String.format("tooltip.%s.sample_location.region", MOD_ID), location
+					.region()
+					.name());
 			
 			componentList.add(chunkText);
 			componentList.add(regionText);

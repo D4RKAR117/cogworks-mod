@@ -12,7 +12,7 @@ import static org.darkar.cog_works.CogWorks.MOD_ID;
 
 public class EmptySampleTubeItemRenderer extends GeoItemRenderer<EmptySampleTubeItem> {
 	public EmptySampleTubeItemRenderer() {
-		super(new DefaultedItemGeoModel<>(new ResourceLocation(MOD_ID, "empty_sample_tube")));
+		super(new DefaultedItemGeoModel<>(ResourceLocation.fromNamespaceAndPath(MOD_ID, "empty_sample_tube")));
 	}
 	
 	@Override

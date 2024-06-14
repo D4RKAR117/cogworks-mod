@@ -17,13 +17,17 @@ import java.util.function.Consumer;
 
 
 public class ScrewdriverItem extends Item implements GeoItem {
-	private static final RawAnimation USE = RawAnimation.begin().thenPlay(
-		"animation.screwdriver.use");
+	private static final RawAnimation USE = RawAnimation
+		.begin()
+		.thenPlay("animation.screwdriver.use");
 	
-	private static final Properties itemProperties = new Properties().stacksTo(1).durability(128);
+	private static final Properties itemProperties = new Properties()
+		.stacksTo(1)
+		.durability(128);
 	private static final int COOLDOWN_TICKS = 3 * 20;
 	
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+	
 	public ScrewdriverItem() {
 		super(itemProperties);
 		SingletonGeoAnimatable.registerSyncedAnimatable(this);
@@ -53,8 +57,8 @@ public class ScrewdriverItem extends Item implements GeoItem {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 		controllers.add(
-			new AnimationController<>(this, "use_controller", 20, state -> PlayState.STOP).triggerableAnim(
-				"use", USE));
+			new AnimationController<>(this, "use_controller", 20, state -> PlayState.STOP).triggerableAnim("use",
+			                                                                                               USE));
 	}
 	
 }

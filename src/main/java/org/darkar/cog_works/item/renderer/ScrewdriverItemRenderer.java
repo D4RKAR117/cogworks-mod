@@ -10,6 +10,6 @@ import static org.darkar.cog_works.CogWorks.MOD_ID;
 public class ScrewdriverItemRenderer extends GeoItemRenderer<ScrewdriverItem> {
 	
 	public ScrewdriverItemRenderer() {
-		super(new DefaultedItemGeoModel<>(new ResourceLocation(MOD_ID, "screwdriver")));
+		super(new DefaultedItemGeoModel<>(ResourceLocation.fromNamespaceAndPath(MOD_ID, "screwdriver")));
 	}
 }

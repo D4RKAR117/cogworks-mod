@@ -10,12 +10,15 @@ import static org.darkar.cog_works.CogWorks.LOGGER;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT, modid = CogWorks.MOD_ID)
 public class CogWorksClient {
-
+	
 	@SubscribeEvent
 	public static void onClientSetup(FMLClientSetupEvent event)
 	{
 		// Some client setup code
 		LOGGER.info("[Cog Works]: HELLO FROM CLIENT SETUP");
-		LOGGER.info("MINECRAFT NAME >> {}", Minecraft.getInstance().getUser().getName());
+		LOGGER.info("MINECRAFT NAME >> {}", Minecraft
+			.getInstance()
+			.getUser()
+			.getName());
 	}
 }

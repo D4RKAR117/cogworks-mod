@@ -15,16 +15,20 @@ public enum SampleSiteRegion {
 	
 	public static final Codec<SampleSiteRegion> CODEC = Codec.STRING.comapFlatMap((regionName) -> {
 		Optional<SampleSiteRegion> sampleSiteRegion = SampleSiteRegion.getRegion(regionName);
-		return sampleSiteRegion.<DataResult<? extends SampleSiteRegion>>map(DataResult::success).orElseGet(
-			() -> DataResult.error(() -> String.format("Invalid Sample Site Region name provided %s", regionName)));
+		return sampleSiteRegion
+			.<DataResult<? extends SampleSiteRegion>>map(DataResult::success)
+			.orElseGet(
+				() -> DataResult.error(() -> String.format("Invalid Sample Site Region name provided %s",
+				                                           regionName)));
 	}, SampleSiteRegion::name);
 	
-	public static final StreamCodec<ByteBuf, SampleSiteRegion> STREAM_CODEC =
-		ByteBufCodecs.STRING_UTF8.map((regionName) -> {
+	public static final StreamCodec<ByteBuf, SampleSiteRegion> STREAM_CODEC = ByteBufCodecs.STRING_UTF8.map(
+		(regionName) -> {
 			Optional<SampleSiteRegion> sampleSiteRegion = SampleSiteRegion.getRegion(regionName);
-			return sampleSiteRegion.orElseThrow(() -> new IllegalArgumentException("Invalid Sample Site Region name provided " + regionName));
+			return sampleSiteRegion.orElseThrow(
+				() -> new IllegalArgumentException("Invalid Sample Site Region name provided " + regionName));
 		}, SampleSiteRegion::name);
-	 
+	
 	
 	/**
 	 * Represents the maximum Y (Top)
@@ -67,7 +71,10 @@ public enum SampleSiteRegion {
 	 */
 	public static Optional<SampleSiteRegion> getRegion(String regionName) {
 		for (SampleSiteRegion region : SampleSiteRegion.values()) {
-			if (region.name().equalsIgnoreCase(regionName)) {
+			if (region
+				.name()
+				.equalsIgnoreCase(regionName))
+			{
 				return Optional.of(region);
 			}
 		}

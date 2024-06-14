@@ -28,7 +28,9 @@ import static org.darkar.cog_works.Registry.Items.DataComponents.SAMPLE_LOCATION
 
 public class EmptySampleTubeItem extends Item implements GeoItem {
 	
-	private static final RawAnimation OPEN_LID = RawAnimation.begin().thenPlay("animation.empty_sample_tube.open_lid");
+	private static final RawAnimation OPEN_LID = RawAnimation
+		.begin()
+		.thenPlay("animation.empty_sample_tube.open_lid");
 	
 	private static final Properties itemProperties = new Properties().stacksTo(32);
 	
@@ -69,13 +71,12 @@ public class EmptySampleTubeItem extends Item implements GeoItem {
 	}
 	
 	
-	public void handleSampleCollection(ChunkPos collectedChunkPos, SampleSiteRegion region, Player player, Level level) {
-		if(level instanceof ServerLevel serverLevel) {
+	public void handleSampleCollection(ChunkPos collectedChunkPos, SampleSiteRegion region, Player player, Level level)
+	{
+		if (level instanceof ServerLevel serverLevel) {
 			ItemStack stack = player.getItemInHand(InteractionHand.OFF_HAND);
 			
-			triggerAnim(player,
-			            GeoItem.getOrAssignId(stack, serverLevel),
-			            "open_lid_controller", "open_lid");
+			triggerAnim(player, GeoItem.getOrAssignId(stack, serverLevel), "open_lid_controller", "open_lid");
 			
 			stack.setCount(stack.getCount() - 1);
 			ItemStack filledSampleTube = new ItemStack(Registry.Items.FILLED_SAMPLE_TUBE.get(), 1);

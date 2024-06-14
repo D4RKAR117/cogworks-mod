@@ -14,11 +14,9 @@ public class NetworkHandler {
 	@SubscribeEvent
 	public static void onPayloadHandlersRegister(final RegisterPayloadHandlersEvent event) {
 		final PayloadRegistrar registrar = event.registrar(PROTOCOL_VERSION);
-		registrar.executesOn(HandlerThread.NETWORK)
-			.playToClient(
-				ClientSampleSiteMapUpdatePayload.TYPE,
-			              ClientSampleSiteMapUpdatePayload.STREAM_CODEC,
-			              ClientSampleSiteMapUpdatePayload::handle
-			             );
+		registrar
+			.executesOn(HandlerThread.NETWORK)
+			.playToClient(ClientSampleSiteMapUpdatePayload.TYPE, ClientSampleSiteMapUpdatePayload.STREAM_CODEC,
+			              ClientSampleSiteMapUpdatePayload::handle);
 	}
 }

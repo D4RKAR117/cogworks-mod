@@ -26,8 +26,8 @@ public class BlockEvents {
 	 * Handles the logic to update the {@link ChunkSampleSiteMap} when a block is broken and is a sample site.
 	 *
 	 * @param levelAccessor level where the block is broken
-	 * @param pos position of the block that was broken
-	 * @param player player that broke the block
+	 * @param pos           position of the block that was broken
+	 * @param player        player that broke the block
 	 */
 	private static void handleChunkSampleSiteMap(LevelAccessor levelAccessor, BlockPos pos, Player player) {
 		ChunkAccess chunk = levelAccessor.getChunk(pos);
@@ -41,16 +41,14 @@ public class BlockEvents {
 		if (ChunkSampleSiteMapUtil.isSurface(chunkSampleSiteMap, pos)) {
 			ChunkSampleSiteMap newChunkSampleSiteMap = ChunkSampleSiteMapUtil.resetDefaultSurface(chunkSampleSiteMap);
 			chunk.setData(CHUNK_SAMPLE_SITE_MAP, newChunkSampleSiteMap);
-			payload = Optional.of(new ClientSampleSiteMapUpdatePayload(chunk.getPos(),
-			                                                           newChunkSampleSiteMap));
+			payload = Optional.of(new ClientSampleSiteMapUpdatePayload(chunk.getPos(), newChunkSampleSiteMap));
 			
 		}
 		
 		if (ChunkSampleSiteMapUtil.isDeep(chunkSampleSiteMap, pos)) {
 			ChunkSampleSiteMap newChunkSampleSiteMap = ChunkSampleSiteMapUtil.resetDefaultDeep(chunkSampleSiteMap);
 			chunk.setData(CHUNK_SAMPLE_SITE_MAP, newChunkSampleSiteMap);
-			payload = Optional.of(new ClientSampleSiteMapUpdatePayload(chunk.getPos(),
-			                                                           newChunkSampleSiteMap));
+			payload = Optional.of(new ClientSampleSiteMapUpdatePayload(chunk.getPos(), newChunkSampleSiteMap));
 		}
 		
 		

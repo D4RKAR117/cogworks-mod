@@ -36,8 +36,9 @@ import static org.darkar.cog_works.Registry.DataAttachments.CHUNK_SAMPLE_SITE_MA
 
 public class SampleSiteRenderBehaviour {
 	
-	private static final ResourceLocation SAMPLE_SITE_TEXTURE_KEY = new ResourceLocation(MOD_ID,
-	                                                                                     "block/sample_stone_site");
+	private static final ResourceLocation SAMPLE_SITE_TEXTURE_KEY = ResourceLocation.fromNamespaceAndPath(MOD_ID,
+	                                                                                                      "block" +
+	                                                                                                      "/sample_stone_site");
 	
 	public static void render(Frustum frustum, PoseStack poseStack, Camera cam) {
 		Minecraft minecraft = Minecraft.getInstance();
@@ -51,17 +52,21 @@ public class SampleSiteRenderBehaviour {
 		MultiBufferSource.BufferSource source = buffers.bufferSource();
 		Vec3 camPos = cam.getPosition();
 		RenderType bufferType = NeoForgeRenderTypes.TRANSLUCENT_ON_PARTICLES_TARGET.get();
-		Map<ChunkPos, ChunkSampleSiteMap> mapsToRender = World.getNearbyChunks(chunk, level, 4).filter(
-			nearbyChunk -> nearbyChunk.hasAttachments() && nearbyChunk.hasData(CHUNK_SAMPLE_SITE_MAP) &&
-			               Data.AttachmentUtils.ChunkSampleSiteMapUtil.isDirty(
-				               nearbyChunk.getData(CHUNK_SAMPLE_SITE_MAP))).collect(
-			Collectors.toMap(ChunkAccess::getPos, mapChunk -> mapChunk.getData(CHUNK_SAMPLE_SITE_MAP)));
+		Map<ChunkPos, ChunkSampleSiteMap> mapsToRender = World
+			.getNearbyChunks(chunk, level, 4)
+			.filter(nearbyChunk -> nearbyChunk.hasAttachments() && nearbyChunk.hasData(CHUNK_SAMPLE_SITE_MAP) &&
+			                       Data.AttachmentUtils.ChunkSampleSiteMapUtil.isDirty(
+				                       nearbyChunk.getData(CHUNK_SAMPLE_SITE_MAP)))
+			.collect(Collectors.toMap(ChunkAccess::getPos, mapChunk -> mapChunk.getData(CHUNK_SAMPLE_SITE_MAP)));
 		
 		for (ChunkSampleSiteMap chunkSampleSiteMap : mapsToRender.values()) {
 			boolean isSurfaceVisible = frustum.isVisible(new AABB(chunkSampleSiteMap.surfacePos())) &&
-			                           !chunkSampleSiteMap.surfacePos().equals(BlockPos.ZERO);
-			boolean isDeepVisible = frustum.isVisible(new AABB(chunkSampleSiteMap.deepPos())) &&
-			                        !chunkSampleSiteMap.deepPos().equals(BlockPos.ZERO);
+			                           !chunkSampleSiteMap
+				                           .surfacePos()
+				                           .equals(BlockPos.ZERO);
+			boolean isDeepVisible = frustum.isVisible(new AABB(chunkSampleSiteMap.deepPos())) && !chunkSampleSiteMap
+				.deepPos()
+				.equals(BlockPos.ZERO);
 			
 			if (!isSurfaceVisible && !isDeepVisible) {
 				return;
@@ -69,7 +74,9 @@ public class SampleSiteRenderBehaviour {
 			
 			BlockPos pos = isSurfaceVisible ? chunkSampleSiteMap.surfacePos() : chunkSampleSiteMap.deepPos();
 			Direction face = isSurfaceVisible ? chunkSampleSiteMap.surfaceFace() : chunkSampleSiteMap.deepFace();
-			Vec3 offset = Vec3.atLowerCornerOf(pos).subtract(camPos);
+			Vec3 offset = Vec3
+				.atLowerCornerOf(pos)
+				.subtract(camPos);
 			
 			poseStack.pushPose();
 			poseStack.translate(offset.x, offset.y, offset.z);
@@ -81,26 +88,41 @@ public class SampleSiteRenderBehaviour {
 			}
 			poseStack.translate(-.5F, -.5F, -.5F);
 			VertexConsumer textureConsumer = source.getBuffer(bufferType);
-			TextureAtlasSprite texture = minecraft.getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(
-				SAMPLE_SITE_TEXTURE_KEY);
+			TextureAtlasSprite texture = minecraft
+				.getTextureAtlas(InventoryMenu.BLOCK_ATLAS)
+				.apply(SAMPLE_SITE_TEXTURE_KEY);
 			
-			Matrix4f quadMatrix = poseStack.last().pose();
-			textureConsumer.vertex(quadMatrix, 0, 1, -0.01F).color(255, 255, 255, 255).uv(texture.getU0(),
-			                                                                              texture.getV0())
-			               .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(LightTexture.FULL_BRIGHT).normal(
-				               poseStack.last(), 0, 0, -1).endVertex();
-			textureConsumer.vertex(quadMatrix, 1, 1, -0.01F).color(255, 255, 255, 255).uv(texture.getU0(),
-			                                                                              texture.getV1())
-			               .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(LightTexture.FULL_BRIGHT).normal(
-				               poseStack.last(), 0, 0, -1).endVertex();
-			textureConsumer.vertex(quadMatrix, 1, 0, -0.01F).color(255, 255, 255, 255).uv(texture.getU1(),
-			                                                                              texture.getV1())
-			               .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(LightTexture.FULL_BRIGHT).normal(
-				               poseStack.last(), 0, 0, -1).endVertex();
-			textureConsumer.vertex(quadMatrix, 0, 0, -0.01F).color(255, 255, 255, 255).uv(texture.getU1(),
-			                                                                              texture.getV0())
-			               .overlayCoords(OverlayTexture.NO_OVERLAY).uv2(LightTexture.FULL_BRIGHT).normal(
-				               poseStack.last(), 0, 0, -1).endVertex();
+			Matrix4f quadMatrix = poseStack
+				.last()
+				.pose();
+			textureConsumer
+				.addVertex(quadMatrix, 0, 1, -0.01F)
+				.setColor(255, 255, 255, 255)
+				.setUv(texture.getU0(), texture.getV0())
+				.setOverlay(OverlayTexture.NO_OVERLAY)
+				.setLight(LightTexture.FULL_BRIGHT)
+				.setNormal(poseStack.last(), 0, 0, -1);
+			textureConsumer
+				.addVertex(quadMatrix, 1, 1, -0.01F)
+				.setColor(255, 255, 255, 255)
+				.setUv(texture.getU0(), texture.getV1())
+				.setOverlay(OverlayTexture.NO_OVERLAY)
+				.setLight(LightTexture.FULL_BRIGHT)
+				.setNormal(poseStack.last(), 0, 0, -1);
+			textureConsumer
+				.addVertex(quadMatrix, 1, 0, -0.01F)
+				.setColor(255, 255, 255, 255)
+				.setUv(texture.getU1(), texture.getV1())
+				.setOverlay(OverlayTexture.NO_OVERLAY)
+				.setLight(LightTexture.FULL_BRIGHT)
+				.setNormal(poseStack.last(), 0, 0, -1);
+			textureConsumer
+				.addVertex(quadMatrix, 0, 0, -0.01F)
+				.setColor(255, 255, 255, 255)
+				.setUv(texture.getU1(), texture.getV0())
+				.setOverlay(OverlayTexture.NO_OVERLAY)
+				.setLight(LightTexture.FULL_BRIGHT)
+				.setNormal(poseStack.last(), 0, 0, -1);
 			source.endBatch(bufferType);
 			poseStack.popPose();
 		}
