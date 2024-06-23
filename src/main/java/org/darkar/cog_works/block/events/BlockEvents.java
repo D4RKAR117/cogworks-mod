@@ -10,9 +10,9 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
-import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
 import org.darkar.cog_works.net.payload.client.ClientSampleSiteMapUpdatePayload;
 import org.darkar.cog_works.utils.Data.AttachmentUtils.ChunkSampleSiteMapUtil;
+import org.darkar.cog_works.world.level.chunk.attachment.ChunkSampleSiteMap;
 
 import java.util.Optional;
 
@@ -25,7 +25,7 @@ public class BlockEvents {
 	/**
 	 * Handles the logic to update the {@link ChunkSampleSiteMap} when a block is broken and is a sample site.
 	 *
-	 * @param levelAccessor level where the block is broken
+	 * @param levelAccessor world where the block is broken
 	 * @param pos           position of the block that was broken
 	 * @param player        player that broke the block
 	 */

@@ -18,8 +18,7 @@ public class CogWorksClient {
 	public static void onClientSetup(FMLClientSetupEvent event)
 	{
 		// Some client setup code
-		LOGGER.info("[Cog Works]: HELLO FROM CLIENT SETUP");
-		LOGGER.info("MINECRAFT NAME >> {}", Minecraft
+		LOGGER.info("[Cog Works] Hello {}", Minecraft
 			.getInstance()
 			.getUser()
 			.getName());

@@ -11,9 +11,8 @@ import net.minecraft.world.level.chunk.ChunkAccess;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.network.codec.NeoForgeStreamCodecs;
 import net.neoforged.neoforge.network.handling.IPayloadContext;
-import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
+import org.darkar.cog_works.world.level.chunk.attachment.ChunkSampleSiteMap;
 
-import static org.darkar.cog_works.CogWorks.LOGGER;
 import static org.darkar.cog_works.CogWorks.MOD_ID;
 import static org.darkar.cog_works.Registry.DataAttachments.CHUNK_SAMPLE_SITE_MAP;
 

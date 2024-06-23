@@ -2,7 +2,7 @@ package org.darkar.cog_works.utils;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.Level;
-import org.darkar.cog_works.level.chunk.attachment.ChunkSampleSiteMap;
+import org.darkar.cog_works.world.level.chunk.attachment.ChunkSampleSiteMap;
 
 public class Data {
 	

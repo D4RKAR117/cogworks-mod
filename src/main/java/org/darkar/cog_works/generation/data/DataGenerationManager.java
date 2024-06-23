@@ -31,7 +31,5 @@ public class DataGenerationManager {
 		                      new ItemTagGenerator(output, lookupProvider, blockTagGenerator.contentsGetter(),
 		                                           existingFileHelper));
 		generator.addProvider(event.includeClient(), new EN_US_Generator(output));
-		
-		generator.addProvider(event.includeServer(), new WorldDataGenerator(output, lookupProvider));
 	}
 }
