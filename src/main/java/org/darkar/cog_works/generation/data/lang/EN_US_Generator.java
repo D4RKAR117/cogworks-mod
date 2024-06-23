@@ -15,6 +15,7 @@ public class EN_US_Generator extends LanguageProvider {
 	protected void addTranslations() {
 		
 		// region Blocks
+		// region Ores
 		addBlock(Registry.Blocks.TUNGSTEN_ORE, "Tungsten Ore");
 		addBlock(Registry.Blocks.DEEPSLATE_TUNGSTEN_ORE, "Deepslate Tungsten Ore");
 		addBlock(Registry.Blocks.TITANIUM_ORE, "Titanium Ore");
@@ -55,6 +56,12 @@ public class EN_US_Generator extends LanguageProvider {
 		addBlock(Registry.Blocks.DEEPSLATE_VANADIUM_ORE, "Deepslate Vanadium Ore");
 		addBlock(Registry.Blocks.ZINC_ORE, "Zinc Ore");
 		addBlock(Registry.Blocks.DEEPSLATE_ZINC_ORE, "Deepslate Zinc Ore");
+		//endregion
+		
+		//region Machines
+		addBlock(Registry.Blocks.TRANSMISSION_SHAFT, "Transmission Shaft");
+		//endregion
+		
 		//endregion
 		
 		//region Items

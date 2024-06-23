@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "build_material=iron,facing=down": {
+      "model": "cog_works:block/iron_transmission_shaft"
+    },
+    "build_material=iron,facing=east": {
+      "model": "cog_works:block/iron_transmission_shaft"
+    },
+    "build_material=iron,facing=north": {
+      "model": "cog_works:block/iron_transmission_shaft"
+    },
+    "build_material=iron,facing=south": {
+      "model": "cog_works:block/iron_transmission_shaft"
+    },
+    "build_material=iron,facing=up": {
+      "model": "cog_works:block/iron_transmission_shaft"
+    },
+    "build_material=iron,facing=west": {
+      "model": "cog_works:block/iron_transmission_shaft"
+    },
+    "build_material=stone,facing=down": {
+      "model": "cog_works:block/stone_transmission_shaft"
+    },
+    "build_material=stone,facing=east": {
+      "model": "cog_works:block/stone_transmission_shaft"
+    },
+    "build_material=stone,facing=north": {
+      "model": "cog_works:block/stone_transmission_shaft"
+    },
+    "build_material=stone,facing=south": {
+      "model": "cog_works:block/stone_transmission_shaft"
+    },
+    "build_material=stone,facing=up": {
+      "model": "cog_works:block/stone_transmission_shaft"
+    },
+    "build_material=stone,facing=west": {
+      "model": "cog_works:block/stone_transmission_shaft"
+    },
+    "build_material=wood,facing=down": {
+      "model": "cog_works:block/wood_transmission_shaft"
+    },
+    "build_material=wood,facing=east": {
+      "model": "cog_works:block/wood_transmission_shaft"
+    },
+    "build_material=wood,facing=north": {
+      "model": "cog_works:block/wood_transmission_shaft"
+    },
+    "build_material=wood,facing=south": {
+      "model": "cog_works:block/wood_transmission_shaft"
+    },
+    "build_material=wood,facing=up": {
+      "model": "cog_works:block/wood_transmission_shaft"
+    },
+    "build_material=wood,facing=west": {
+      "model": "cog_works:block/wood_transmission_shaft"
+    }
+  }
+}

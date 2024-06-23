@@ -6,7 +6,7 @@
 # The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
 modLoader="javafml" #mandatory
 
-# A version range to match for said mod loader - for regular FML @Mod it will be the the FML version. This is currently 47.
+# A version range to match for said mod loader - for regular FML @Mod it will be the FML version. This is currently 47.
 loaderVersion="${loader_version_range}" #mandatory
 
 # The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
@@ -38,7 +38,14 @@ displayName="${mod_name}" #mandatory
 #logoFile="cog_works.png" #optional
 
 # A text field displayed in the mod UI
-credits="XFactHD for the support with rendering wizardy" #optional
+credits='''
+XFactHD for the support with rendering wizardy
+
+ReikaKalseki and his mods RotaryCraft(MC 1.7.10), ReactorCraft(MC 1.7.10) that served as inspiration/direct
+reference for many of this mod core mechanics and elements.
+
+Gecko/Tslat for the GeckoLib library that made the advanced rendering and animation possible.
+''' #optional
 
 # A text field displayed in the mod UI
 authors="${mod_authors}" #optional

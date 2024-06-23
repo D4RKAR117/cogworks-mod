@@ -1,0 +1,16 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.transmission_shaft.work": {
+			"loop": true,
+			"animation_length": 1,
+			"bones": {
+				"shaft": {
+					"rotation": {
+						"vector": [0, 0, "((query.anim_time * variable.rads_sec) * (180 / math.pi))"]
+					}
+				}
+			}
+		}
+	}
+}

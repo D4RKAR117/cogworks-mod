@@ -8,10 +8,13 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.attachment.AttachmentType;
 import net.neoforged.neoforge.registries.*;
+import org.darkar.cog_works.block.TransmissionShaftBlock;
+import org.darkar.cog_works.block.entity.TransmissionShaftBlockEntity;
 import org.darkar.cog_works.item.EmptySampleTubeItem;
 import org.darkar.cog_works.item.FilledSampleTubeItem;
 import org.darkar.cog_works.item.ProspectingPickItem;
@@ -27,6 +30,7 @@ public class Registry {
 	static void initialize(IEventBus bus) {
 		LOGGER.info("[Cog Works] Initializing registries ...");
 		Blocks.init(bus);
+		Blocks.Entities.init(bus);
 		Items.init(bus);
 		Items.DataComponents.init(bus);
 		DataAttachments.init(bus);
@@ -35,6 +39,8 @@ public class Registry {
 	public static class Blocks {
 		
 		private static final DeferredRegister.Blocks DEFERRED_REGISTRY = DeferredRegister.createBlocks(MOD_ID);
+		
+		//region Ores
 		// Tungsten Ore
 		public static final DeferredBlock<Block> TUNGSTEN_ORE = DEFERRED_REGISTRY.registerSimpleBlock("tungsten_ore",
 		                                                                                              BlockBehaviour.Properties.of()
@@ -369,6 +375,14 @@ public class Registry {
 			                                               .strength(4.5F, 3.0F)
 			                                               .lightLevel((state) -> 7)
 			                                               .sound(SoundType.DEEPSLATE));
+		//endregion
+		
+		//region Machines
+		
+		public static final DeferredBlock<Block> TRANSMISSION_SHAFT = DEFERRED_REGISTRY.register(
+			"transmission_shaft", TransmissionShaftBlock::new);
+		
+		//endregion
 		
 		private static void init(IEventBus bus) {
 			LOGGER.info("[Cog Works] Registering blocks ...");
@@ -406,13 +420,35 @@ public class Registry {
 				return TagKey.create(Registries.BLOCK, ResourceLocation.fromNamespaceAndPath(MOD_ID, name));
 			}
 		}
+		
+		public static class Entities {
+			
+			private static final DeferredRegister<BlockEntityType<?>> DEFERRED_REGISTRY =
+				DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, MOD_ID);
+			
+			//region Machine Block Entities
+			
+			public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<TransmissionShaftBlockEntity>> TRANSMISSION_SHAFT =
+				DEFERRED_REGISTRY.register("transmission_shaft_entity",
+				                           () -> BlockEntityType.Builder.of(TransmissionShaftBlockEntity::new,
+				                                                            Blocks.TRANSMISSION_SHAFT.get()).build(null));
+			
+			//endregion
+			
+			public static void init(IEventBus bus) {
+				LOGGER.info("[Cog Works] Registering block entities ...");
+				DEFERRED_REGISTRY.register(bus);
+			}
+		
+		}
 	}
 	
 	public static class Items {
 		//region Deferred Items
 		private static final DeferredRegister.Items DEFERRED_REGISTRY = DeferredRegister.createItems(MOD_ID);
 		
-		//region BlockItems for ores
+		//region BlockItems
+		//region Ores
 		public static final DeferredItem<BlockItem> TUNGSTEN_ORE = registerBlockItem(Blocks.TUNGSTEN_ORE);
 		public static final DeferredItem<BlockItem> DEEPSLATE_TUNGSTEN_ORE = registerBlockItem(
 			Blocks.DEEPSLATE_TUNGSTEN_ORE);
@@ -472,6 +508,12 @@ public class Registry {
 			Blocks.DEEPSLATE_VANADIUM_ORE);
 		public static final DeferredItem<BlockItem> ZINC_ORE = registerBlockItem(Blocks.ZINC_ORE);
 		public static final DeferredItem<BlockItem> DEEPSLATE_ZINC_ORE = registerBlockItem(Blocks.DEEPSLATE_ZINC_ORE);
+		//endregion
+		
+		//region Machines
+		public static final DeferredItem<BlockItem> TRANSMISSION_SHAFT = registerBlockItem(Blocks.TRANSMISSION_SHAFT);
+		//endregion
+		
 		//endregion
 		
 		//region Tools

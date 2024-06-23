@@ -1,4 +1,4 @@
-// 1.21	2024-06-14T16:49:27.938989	Block States: cog_works
+// 1.21	2024-06-17T17:36:01.3163642	Block States: cog_works
 350fd53949bfccc9cfb17e29adbfe32403fb4939 assets/cog_works/blockstates/bauxite_ore.json
 e51ca31dc1f38be3f3b26a2459d64999a3b05818 assets/cog_works/blockstates/beryllium_ore.json
 8377d58378ecf121fea543fbfc414d9082c0391f assets/cog_works/blockstates/cadmium_ore.json
@@ -35,6 +35,7 @@ c99321e0130a145e711c1922179822f4aef916c9 assets/cog_works/blockstates/palladium_
 52c26c03fe6b8a22f3ad768d7a53ae6afd55b4e4 assets/cog_works/blockstates/platinum_ore.json
 8b80a5e29f7fdb24fa734312558c752c2738acca assets/cog_works/blockstates/thorium_ore.json
 b65bc8f7bce9609206a721d1e0997201be0b1e8c assets/cog_works/blockstates/titanium_ore.json
+166ddf49766b244c9f0800b336c33207b43ac59d assets/cog_works/blockstates/transmission_shaft.json
 1c616f4b3c8e3c41156e97374da30b08475bf675 assets/cog_works/blockstates/tungsten_ore.json
 cdd082a2da7a2358cc27ab08ed18c2eee52fe6d5 assets/cog_works/blockstates/uranium_ore.json
 b3a65dc6a123a2421ae173a842c205801ad61a3b assets/cog_works/blockstates/vanadium_ore.json
@@ -66,6 +67,7 @@ dfed18a8a336ea6c205e163e809e596f13077570 assets/cog_works/models/block/deepslate
 2944a2d294997de1b001f4d721f055f5fb5fbc86 assets/cog_works/models/block/deepslate_zinc_ore.json
 59661c73158064381866f9f1cd18201454f9061a assets/cog_works/models/block/graphite_ore.json
 70443aa1cef3e6b03e39733e2c75f68c3c19eafb assets/cog_works/models/block/iridium_ore.json
+c7635b13750120d159bbca9312cb7decc8fdd531 assets/cog_works/models/block/iron_transmission_shaft.json
 5a5cfc99228520e0aa9306c3e6d99305d8643c0c assets/cog_works/models/block/lithium_ore.json
 9c7ecea8cdd8b8c0c8a94020555e532b30d01094 assets/cog_works/models/block/manganese_ore.json
 a5b74638983dee959e4583cdbcdf929258f3a05d assets/cog_works/models/block/molybdenum_ore.json
@@ -73,11 +75,13 @@ b15b7e3d6529b81d8ba87bf2c235b54d256c844d assets/cog_works/models/block/nickel_or
 257b3dcd18d3a8771ef76f0624a906bbe4e43403 assets/cog_works/models/block/osmium_ore.json
 31070103e7438c257fc398ef81c942e3311fb9e9 assets/cog_works/models/block/palladium_ore.json
 80b26262ad81239d310d707169240c2514a52316 assets/cog_works/models/block/platinum_ore.json
+737664283c3a8aa4143cafe3a7bb356f9444609c assets/cog_works/models/block/stone_transmission_shaft.json
 beed7caa39cd4844bdbd6ae30efb147aa3ee7c57 assets/cog_works/models/block/thorium_ore.json
 f237ba36b236ae527d4a051780de3bbb641de54b assets/cog_works/models/block/titanium_ore.json
 506a329a6062618b7b3fc2c6027a1419e647f4ea assets/cog_works/models/block/tungsten_ore.json
 fa291983d01d28c0b6378822762d293a36965c80 assets/cog_works/models/block/uranium_ore.json
 111473da7183d213ca8e5ddd9e0a8b7d2c801c80 assets/cog_works/models/block/vanadium_ore.json
+bdc61a1eb5805eaa8a85f82b07712d2d551f5382 assets/cog_works/models/block/wood_transmission_shaft.json
 b953b48c19ff49666fbf0ede5ad064d507f091b2 assets/cog_works/models/block/zinc_ore.json
 b5c1521b2480a44f1b2e665f078c863da14011c5 assets/cog_works/models/item/bauxite_ore.json
 e15f91b5cf62176cb61b77d8e234215a3b6137e5 assets/cog_works/models/item/beryllium_ore.json
@@ -106,6 +110,7 @@ a8c25b8e23c8ad1939cc5cb4d8729316d61b5e13 assets/cog_works/models/item/deepslate_
 b662c9a7d7c4383ed02f950bc55e301fc3247733 assets/cog_works/models/item/deepslate_zinc_ore.json
 28fc64273a9d3dbb4ed99135845c13b9a55db4d4 assets/cog_works/models/item/graphite_ore.json
 690bc7cbe2cad7f6e4c106b8ccab6a7b2964ac46 assets/cog_works/models/item/iridium_ore.json
+ce539ad125b155bf887ef57195a9f5811dcc759f assets/cog_works/models/item/iron_transmission_shaft.json
 6937e8823377335729fc84c02a17e9fd2c752f95 assets/cog_works/models/item/lithium_ore.json
 83cd8ee9755946bf3febc6b24c02a5b48c07ffa4 assets/cog_works/models/item/manganese_ore.json
 5b6c41ac8226713bd8f7d59f204cea4a862c3117 assets/cog_works/models/item/molybdenum_ore.json
@@ -113,9 +118,11 @@ ead2855d01ac79bf706a2cc5ea8d2c732cb2cb1f assets/cog_works/models/item/nickel_ore
 ca9ef6cfa69c4bbe09b0deefe704a38320bd8024 assets/cog_works/models/item/osmium_ore.json
 fe1ee62d7531c3faa53eef7ef1e0541960927516 assets/cog_works/models/item/palladium_ore.json
 f5a06872c5e15db5b1d3fa522059e9410f693d89 assets/cog_works/models/item/platinum_ore.json
+b030b6fb3d837c66de1947d3b541f5378795fd72 assets/cog_works/models/item/stone_transmission_shaft.json
 260d4b9aa5cabebaecb56140d19752ab6b8de777 assets/cog_works/models/item/thorium_ore.json
 8240611b300d8277356a01594b01c4805e186d4d assets/cog_works/models/item/titanium_ore.json
 10c028d8ec1724b77a6a3196495188da7b041c1d assets/cog_works/models/item/tungsten_ore.json
 56b06e5e3a18f0fbcbfcbddfdbd2f7ad0a12545a assets/cog_works/models/item/uranium_ore.json
 dd958386816017507e34edcf411efc4dd51173f2 assets/cog_works/models/item/vanadium_ore.json
+ac19a0dcdae753e7320d3538ac7c7fd360a1fdbe assets/cog_works/models/item/wood_transmission_shaft.json
 d8dbe762ee9ba8684a97ad0b6007c8923cce0499 assets/cog_works/models/item/zinc_ore.json
