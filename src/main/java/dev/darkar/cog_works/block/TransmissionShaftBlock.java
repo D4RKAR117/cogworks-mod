@@ -9,6 +9,7 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -19,12 +20,13 @@ import org.jetbrains.annotations.Nullable;
 public class TransmissionShaftBlock extends Block implements EntityBlock {
 	
 	public static final DirectionProperty FACING = BlockStateProperties.FACING;
-	public static final BuildMaterialProperty MATERIAL = BuildMaterialProperty.create("build_material");
+	public static final BuildMaterialProperty SHAFT_MATERIAL = BuildMaterialProperty.create("shaft_material");
 	
 	private static final Properties blockProperties = Properties.of()
 		.strength(2.0F)
 		.requiresCorrectToolForDrops()
 		.lightLevel(state -> 7)
+		.sound(SoundType.METAL)
 		.noOcclusion();
 	
 	public TransmissionShaftBlock() {
@@ -32,7 +34,7 @@ public class TransmissionShaftBlock extends Block implements EntityBlock {
 		
 		registerDefaultState(stateDefinition.any()
 		                                    .setValue(FACING, Direction.NORTH)
-		                                    .setValue(MATERIAL, BuildMaterial.STONE)
+		                                    .setValue(SHAFT_MATERIAL, BuildMaterial.STONE)
 		                    );
 	}
 	
@@ -49,7 +51,7 @@ public class TransmissionShaftBlock extends Block implements EntityBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(FACING);
-		builder.add(MATERIAL);
+		builder.add(SHAFT_MATERIAL);
 	}
 	
 	@Nullable

@@ -1,58 +1,58 @@
 {
   "variants": {
-    "build_material=iron,facing=down": {
-      "model": "cog_works:block/iron_transmission_shaft"
+    "facing=down,shaft_material=iron": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=iron,facing=east": {
-      "model": "cog_works:block/iron_transmission_shaft"
+    "facing=down,shaft_material=stone": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=iron,facing=north": {
-      "model": "cog_works:block/iron_transmission_shaft"
+    "facing=down,shaft_material=wood": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=iron,facing=south": {
-      "model": "cog_works:block/iron_transmission_shaft"
+    "facing=east,shaft_material=iron": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=iron,facing=up": {
-      "model": "cog_works:block/iron_transmission_shaft"
+    "facing=east,shaft_material=stone": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=iron,facing=west": {
-      "model": "cog_works:block/iron_transmission_shaft"
+    "facing=east,shaft_material=wood": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=stone,facing=down": {
-      "model": "cog_works:block/stone_transmission_shaft"
+    "facing=north,shaft_material=iron": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=stone,facing=east": {
-      "model": "cog_works:block/stone_transmission_shaft"
+    "facing=north,shaft_material=stone": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=stone,facing=north": {
-      "model": "cog_works:block/stone_transmission_shaft"
+    "facing=north,shaft_material=wood": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=stone,facing=south": {
-      "model": "cog_works:block/stone_transmission_shaft"
+    "facing=south,shaft_material=iron": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=stone,facing=up": {
-      "model": "cog_works:block/stone_transmission_shaft"
+    "facing=south,shaft_material=stone": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=stone,facing=west": {
-      "model": "cog_works:block/stone_transmission_shaft"
+    "facing=south,shaft_material=wood": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=wood,facing=down": {
-      "model": "cog_works:block/wood_transmission_shaft"
+    "facing=up,shaft_material=iron": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=wood,facing=east": {
-      "model": "cog_works:block/wood_transmission_shaft"
+    "facing=up,shaft_material=stone": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=wood,facing=north": {
-      "model": "cog_works:block/wood_transmission_shaft"
+    "facing=up,shaft_material=wood": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=wood,facing=south": {
-      "model": "cog_works:block/wood_transmission_shaft"
+    "facing=west,shaft_material=iron": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=wood,facing=up": {
-      "model": "cog_works:block/wood_transmission_shaft"
+    "facing=west,shaft_material=stone": {
+      "model": "minecraft:block/cube"
     },
-    "build_material=wood,facing=west": {
-      "model": "cog_works:block/wood_transmission_shaft"
+    "facing=west,shaft_material=wood": {
+      "model": "minecraft:block/cube"
     }
   }
 }

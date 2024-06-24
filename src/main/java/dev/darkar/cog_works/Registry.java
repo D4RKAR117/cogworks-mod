@@ -2,6 +2,7 @@ package dev.darkar.cog_works;
 
 import dev.darkar.cog_works.block.TransmissionShaftBlock;
 import dev.darkar.cog_works.block.entity.TransmissionShaftBlockEntity;
+import dev.darkar.cog_works.block.item.TransmissionShaftBlockItem;
 import dev.darkar.cog_works.item.EmptySampleTubeItem;
 import dev.darkar.cog_works.item.FilledSampleTubeItem;
 import dev.darkar.cog_works.item.ProspectingPickItem;
@@ -91,7 +92,8 @@ public class Registry {
 		//region BlockItems
 		
 		//region Machines
-		public static final DeferredItem<BlockItem> TRANSMISSION_SHAFT = registerBlockItem(Blocks.TRANSMISSION_SHAFT);
+		public static final DeferredItem<BlockItem> TRANSMISSION_SHAFT = DEFERRED_REGISTRY.register(
+			"transmission_shaft", TransmissionShaftBlockItem::new);
 		//endregion
 		
 		//endregion

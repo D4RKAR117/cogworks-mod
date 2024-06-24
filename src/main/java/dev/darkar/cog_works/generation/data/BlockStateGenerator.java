@@ -25,19 +25,18 @@ public class BlockStateGenerator extends BlockStateProvider {
 	protected void registerStatesAndModels() {
 		
 		getVariantBuilder(Registry.Blocks.TRANSMISSION_SHAFT.get()).forAllStates(state -> {
-			BuildMaterial mat = state.getValue(TransmissionShaftBlock.MATERIAL);
+			BuildMaterial shaftMat = state.getValue(TransmissionShaftBlock.SHAFT_MATERIAL);
 			
-			String variantName = String.format("%s_transmission_shaft", mat.getSerializedName());
+			String variantName = String.format("%s_transmission_shaft", shaftMat.getSerializedName());
 			
-			ResourceLocation matTexture = ResourceLocation.fromNamespaceAndPath(MOD_ID, String.format(
-				"block/%s", variantName));
-			
-			
-			ModelFile standardBlock = models().withExistingParent(variantName, "block/cube_all")
-				.texture("all", matTexture);
+			ResourceLocation matTexture = ResourceLocation.fromNamespaceAndPath(MOD_ID, "block/transmission_shaft");
 			
 			
-			return ConfiguredModel.builder().modelFile(standardBlock).build();
+			ModelFile standardBlock = models().getExistingFile(mcLoc("block/cube"));
+			
+			
+			return ConfiguredModel
+				.builder().modelFile(standardBlock).build();
 		});
 	}
 	
